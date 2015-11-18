@@ -1,0 +1,98 @@
+/* CSS declarations go here */
+
+.app-layout {
+    font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
+}
+
+.app-content {
+}
+
+
+.mdl-grid > .mdl-cell {
+    border-color: #F5F5F5;    /* Grey 100 */
+    border-style: solid;
+    border-width: thin;
+}
+
+
+.text-centre-vertically, .text-center-vertically {
+    margin-top: auto;
+    margin-bottom: auto;
+    /*
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    */
+}
+
+.centre-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* The block must have a set width (can be %), otherwise it's full width and can't be centred */
+}
+
+.instructions {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 12pt;
+    font-weight: 400;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.section_heading {
+    font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
+    font-size: 14pt;
+    font-weight: 500;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.body_text {
+    font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
+    font-size: 12pt;
+    font-weight: 300;
+    display: block;
+}
+
+.field-name {
+    font-weight: 400;
+    color: #9E9E9E;     /* Grey 500 */
+    display: inline;
+}
+
+.paper_letterpress {
+    /* x-offset y-offset blur color */
+    text-shadow: 0 2px 3px #555;
+}
+
+.field-name:before {
+    content: ' ';
+    clear: right;
+    display: block;
+}
+
+.field-value {
+    font-weight: 300;
+    display: inline;
+}
+
+
+.mdl-card__title, .mdl-card__menu {
+    color: #fff;
+}
+
+
+/* Add project Fast Action Button*/
+.FAB-bottom-right {
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 0;
+    margin-right: 32px;
+    margin-bottom: 32px;
+    z-index: 9999;
+}

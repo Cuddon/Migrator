@@ -1,0 +1,126 @@
+<!-- View  a step -->
+
+<template name="viewStep">
+
+    {{> instructionsRow text2="View a step" }}
+
+    <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--2-col">
+        </div>
+
+        <div class="mdl-cell mdl-cell--8-col">
+            <!-- New sub row -->
+            <div class="mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-cell mdl-cell--2-col field-name">
+                    <div class="field-name">Step name</div>
+                </div>
+
+                <div class="mdl-cell mdl-cell--10-col">
+                    <div class="field-value">{{step.name}}</div>
+                </div>
+            </div>
+            <!-- New sub row -->
+            <div class="mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-cell mdl-cell--2-col field-name">
+                    <div class="field-name">Description</div>
+                </div>
+
+                <div class="mdl-cell mdl-cell--10-col">
+                    <div class="field-value">{{step.description}}</div>
+                </div>
+            </div>
+            <!-- New sub row -->
+            <div class="mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-cell mdl-cell--2-col field-name">
+                    <div class="field-name">Part of model</div>
+                </div>
+
+                <div class="mdl-cell mdl-cell--10-col">
+                    <div class="field-value">{{model.name}}</div>
+                </div>
+            </div>
+            <!-- New sub row -->
+            <div class="mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-cell mdl-cell--2-col field-name">
+                    <div class="field-name">Part of project</div>
+                </div>
+
+                <div class="mdl-cell mdl-cell--10-col">
+                    <div class="field-value">{{project.name}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--1-col">
+            <div class="secondary-text-color centre-block" style="width: 24px">
+                <!-- Dropdown - right aligned menu below button -->
+                <button id="actions-dropdown" class="mdl-button mdl-js-button mdl-button--icon right">
+                    <i class="material-icons">more_vert</i>
+                </button>
+            </div>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="actions-dropdown">
+                <li class="edit-button mdl-menu__item"><i class="material-icons">edit</i> Edit step details</li>
+                <li disabled class="info-button mdl-menu__item"><i class="material-icons">info</i> Info</li>
+                <li disabled class="clone-button mdl-menu__item"><i class="material-icons">content_copy</i> Clone</li>
+                <li disabled class="share-button mdl-menu__item"><i class="material-icons">share</i> Share</li>
+                <li class="delete-button mdl-menu__item"><i class="material-icons">delete</i> Delete step</li>
+            </ul>
+        </div>
+
+        <div class="mdl-cell mdl-cell--1-col">
+        </div>
+    </div>
+
+
+    <!-- Notes -->
+    <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--2-col">
+        </div>
+
+        <div class="mdl-cell mdl-cell--8-col">
+            <!-- New sub row -->
+            <div class="mdl-grid mdl-grid--no-spacing">
+                {{#if showNotes}}
+                    <div class="mdl-cell mdl-cell--2-col field-name">
+                        <div class="field-name">Notes</div>
+                        <button class="toggle-notes-button mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">expand_less</i>
+                        </button>
+                    </div>
+
+                    <div class="mdl-cell mdl-cell--10-col">
+                        <div class="field-value">
+                            <form action="#">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                                <textarea class="mdl-textfield__input" type="text" rows="10" maxrows="20"
+                                          id="notes">{{step.notes}}</textarea>
+                                    <label class="mdl-textfield__label" for="notes">Type notes here (automatically
+                                        saved)</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                {{else}}
+                    <div class="mdl-cell mdl-cell--2-col field-name">
+                        <div class="field-name">Notes</div>
+                        <button class="toggle-notes-button mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">expand_more</i>
+                        </button>
+                    </div>
+                    <div class="mdl-cell mdl-cell--10-col">
+                        <div class="field-value">
+                        </div>
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--2-col">
+        </div>
+    </div>
+
+    <!-- Step details -->
+
+</template>
+
+

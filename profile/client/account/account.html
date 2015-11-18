@@ -1,0 +1,48 @@
+<!-- Login widget -->
+
+<template name="profile">
+
+    {{#if currentUser}}
+        {{> instructionsRow text2="View/change account details"}}
+    {{else}}
+        {{> instructionsRow text2="Create an account or log in"}}
+    {{/if}}
+
+    <!-- Login buttons -->
+    <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+        </div>
+
+        <div class="mdl-cell mdl-cell--8-col">
+            {{#if currentUser}}
+                {{#if loggingIn}}
+                {{! We aren't actually logged in yet }}
+                    {{> signingIn}}
+                {{else}}
+                {{! Logged in }}
+                    {{> signedIn}}
+                {{/if}}
+            {{else}}
+            {{! User not logged }}
+                {{> signedOut}}
+            {{/if}}
+        </div>
+
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+        </div>
+    </div>
+
+    <!-- Account Details -->
+    <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+        </div>
+
+        <div class="mdl-cell mdl-cell--8-col">
+        </div>
+
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+        </div>
+    </div>
+
+</template>
+

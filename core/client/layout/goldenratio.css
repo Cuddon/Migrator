@@ -1,0 +1,80 @@
+/*
+    see http://www.goldenapplewebdesign.com/responsive-aspect-ratios-with-pure-css/
+
+    When declaring percentages instead of fixed values for padding, the percentage is calculated based on
+    the WIDTH of the element in question, even if we are declaring an inherently vertical height effecting value
+    such as padding-top or padding-bottom. To take advantage of this for the purpose of maintaining our height
+    relative to width, all we have to do is a little math!
+
+    padding-top calculation:
+    A:B (width:height)
+    B / A * 100 = C%
+
+    16:9 (A=16, B=9): C = 9/16*100 = 56.25%
+    4:3  (A=4, B=3): C = 3/4*100 = 75.0%
+
+    1:1.618 Portrait (A=1, B=1.618): C = 161.8%
+    1.618:1 Landscape (A=1.168, B = 1): C = 61.8%
+
+    ** Example **
+    <div style="width:60%">
+        <div class="golden-ratio-landscape " style="background-image: url('{{logo}}')">
+            <div class="content">
+                {{name}}
+            </div>
+        </div>
+    </div>
+
+*/
+
+
+/* Portrait box */
+
+.golden-ratio-portrait {
+    position: relative;
+    border: 1px solid gray;
+}
+
+.golden-ratio-portrait:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 161.8%;  /* 1:1.618 */
+}
+
+.golden-ratio-portrait > .golden-ratio-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* bottom: 0; */
+}
+
+/* Landscape box */
+.golden-ratio-landscape {
+    position: relative;
+    /* border: 1px solid gray; */
+}
+
+.golden-ratio-landscape:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 61.8%;  /* 1.618:1 */
+}
+
+.golden-ratio-landscape > .golden-ratio-content, .golden-ratio-landscape > .content-no-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* bottom: 0; */
+    padding: 20px 10px 20px 10px;
+}
+
+.golden-ratio-landscape > .golden-ratio-content {
+    background: rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+

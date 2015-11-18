@@ -1,0 +1,138 @@
+<!-- Add a new step for a project -->
+<template name="addStep">
+
+    {{> instructionsRow text2="Add a new step to the selected model and click the save button"}}
+
+    <form action="#">
+
+        <!-- Project name row -->
+        <div class="mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+                <div>Project: {{project.name}}</div>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+        </div>
+
+        <!-- Model name row -->
+        <div class="mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+                <div>Model: {{model.name}}</div>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+        </div>
+
+        <!-- Step Name row -->
+        <div class="mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                    <input class="mdl-textfield__input" type="text" id="name"
+                           maxlength="{{clientSettings.step.nameMaxLength}}"/>
+                    <label class="mdl-textfield__label" for="name">Step name</label>
+                </div>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+        </div>
+
+        <!-- Description row -->
+        <div class="mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                    <textarea class="mdl-textfield__input" type="text" rows="3" id="description" name="description"
+                              maxlength="{{clientSettings.step.descriptionMaxLength}}"></textarea>
+                    <label class="mdl-textfield__label" for="description">Description</label>
+                </div>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+        </div>
+
+
+        <!-- Notes row -->
+        <div class="mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                    <textarea class="mdl-textfield__input" type="text" rows="3" id="notes"></textarea>
+                    <label class="mdl-textfield__label" for="notes">Notes</label>
+                </div>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+        </div>
+
+        <!-- Image row -->
+        <div class="mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                    <input class="mdl-textfield__input mdl-textfield--full-width" id="imageUrl">
+                    <label class="mdl-textfield__label" for="imageUrl">Image URL</label>
+                </div>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+        </div>
+
+        <!-- Action Buttons row -->
+        <div class="mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+                <button type="button"
+                        class="cancel-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                    Cancel
+                </button>
+                <button type="submit"
+                        class="save-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Save
+                </button>
+
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+        </div>
+
+    </form>
+
+</template>

@@ -1,0 +1,12 @@
+
+<!-- Error strip template. Each error can be dismissed independently -->
+<template name="errors">
+    {{#if errorMessages}}
+        {{#each errorMessages}}
+            <div class="alert alert-dismissable alert-danger">
+                <a type="button" class="close dismiss-error" data-dismiss="alert">×</a>
+                <p><em>{{this.error}}: </em>{{this.reason}}</p>
+            </div>
+        {{/each}}
+    {{/if}}
+</template>

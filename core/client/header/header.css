@@ -1,0 +1,14 @@
+
+span.headerRow2 {
+    margin-left:20px;
+    margin-bottom:16px;
+}
+
+span.headerRow2 > .activity{
+    margin-left:32px;
+}
+
+
+.mdl-layout__drawer > .userName {
+    padding-left: 32px;
+}

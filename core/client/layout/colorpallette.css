@@ -1,0 +1,75 @@
+/* Resources:
+	https://www.google.com/design/spec/style/color.html#color-color-palette
+	https://www.materialpalette.com
+
+ */
+
+
+/***** Material Paper Colours ****/
+.default-paper-color {
+    /* White */
+    background: #FFFFFF;
+}
+
+.background-paper-color {
+    /* Grey 100 #F5F5F5*/
+    /* Grey 50 #FAFAFA*/
+    background-color: #FAFAFA;
+}
+
+
+/***** Material Ink Colours - TEXT ****/
+
+.primary-text-color-light {
+    /* White */
+    color: #FFFFFF;
+}
+
+.secondary-text-color {
+    /* Grey 500 */
+    color: #9E9E9E;
+}
+
+.primary-text-color-dark {
+    /* Black */
+    color: #212121;
+}
+
+
+.mandatory-text-color {
+    /* Pink 500 mandatory text*/
+    color: #E91E63;
+}
+
+/***** Material Ink Colours - FILLS ****/
+
+.default-primary-color {
+    /* Blue 500 */
+    background: #2196F3;
+}
+
+.dark-primary-color {
+    /* Darker Blue 700 */
+    background: #1976D2;
+}
+
+.light-primary-color {
+    /* Lighter Blue 300 */
+    background: #64B5F6;
+}
+
+.accent-color {
+    /* Pink A2 FAB */
+    background: #FF4081;
+}
+
+.secondary-accent-color {
+    /* Light blue 500 FAB*/
+    background: #03A9F4;
+}
+
+.divider-color {
+    /* Light grey */
+    border-color: #B6B6B6;
+}
+

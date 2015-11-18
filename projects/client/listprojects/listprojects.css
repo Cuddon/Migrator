@@ -1,0 +1,13 @@
+/* CSS declarations go here */
+
+
+
+.project-card.mdl-card {
+    width: 100%;        /* 100% of the width of the column/cell */
+}
+
+
+
+.project-card > .mdl-card__supporting-text {
+    height: 60px;
+}

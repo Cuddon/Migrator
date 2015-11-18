@@ -1,0 +1,62 @@
+<template name="signedIn">
+
+    <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--12-col">
+            {{> loginButtons}}
+        </div>
+    </div>
+
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            <a href="\projects" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">Go to Projects List</a>
+        </div>
+    </div>
+
+    <div class="mdl-grid mdl-grid--no-spacing">
+
+        {{#with currentUser}}
+            <div class="mdl-cell mdl-cell--12-col">
+                <div class="section_heading">Account Settings</div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                    <input class="mdl-textfield__input" type="text" id="profileName" name="profileName"
+                           value="{{profile.name}}" maxlength="50" required/>
+                    <label class="mdl-textfield__label" for="profileName">Account Name</label>
+                </div>
+
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                    <input class="mdl-textfield__input" type="text" id="profileAlias" name="profileAlias"
+                           value="{{profile.alias}}" maxlength="25"/>
+                    <label class="mdl-textfield__label" for="profileAlias">Community Alias</label>
+                </div>
+            </div>
+
+            <div class="section_heading">Account Details</div>
+            <div class="mdl-cell mdl-cell--12-col">
+                <div>Account Type: {{account.description}}</div>
+                <div>Start date:   {{account.startDate}}</div>
+                <div>Expires:      Never</div>
+                <div>Member Since: {{formatTime account.createdAt}}</div>
+            </div>
+        {{/with}}
+    </div>
+
+    <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--12-col">
+            <div class="section_heading">Take Action</div>
+            <button class="signout-button mdl-button mdl-js-button mdl-js-ripple-effect">Sign Out</button>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect" disabled>Upgrade Account</button>
+
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect" disabled>Change Password</button>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect" disabled>Suspend Account</button>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect" disabled>Delete Account</button>
+        </div>
+    </div>
+
+</template>
+
+
+<template name="signingIn">
+    <p>Signing in ....</p>
+
+    <div class="mdl-spinner mdl-js-spinner is-active"></div>
+</template>

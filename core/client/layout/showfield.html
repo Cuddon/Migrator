@@ -1,0 +1,21 @@
+
+<template name="showField">
+
+    {{!
+        {{> showField "Fieldname" "FieldlValue"
+        e.g.
+        {{> showField name="Project" value="My special project"
+    }}
+
+    <!-- New row -->
+    <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--4-col field-name">
+            <div class="field-name">{{name}}</div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--8-col">
+            <div class="field-value">{{this.value}}</div>
+        </div>
+    </div>
+
+</template>

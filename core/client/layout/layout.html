@@ -1,0 +1,27 @@
+<template name="ApplicationLayout">
+
+    <!-- Outer div so MDL does not destroy Iron Router events (see https://github.com/Zodiase/meteor-mdl/issues/2)-->
+    <div class="app-layout">
+
+        <!-- Material Design Lite layout wrapper -->
+        <div class="mdl-layout mdl-js-layout">
+
+                <!-- Header -->
+                {{> header}}
+
+                <main class="background-paper-color app-content mdl-layout__content">
+                    <!-- Error messages - dismissible -->
+                    <div>{{> errors}}</div>
+
+                    <!-- Variable content container -->
+                    <div>
+                        {{> yield "content"}}
+                    </div>
+                </main>
+
+                <!-- Footer -->
+                {{> footer}}
+            </div>
+    </div>
+
+</template>

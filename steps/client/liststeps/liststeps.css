@@ -1,0 +1,8 @@
+
+.step-card.mdl-card {
+    width: 100%;        /* 100% of the width of the column/cell */
+}
+
+.step-card > .mdl-card__supporting-text {
+    height: 60px;
+}

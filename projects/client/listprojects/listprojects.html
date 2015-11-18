@@ -1,0 +1,58 @@
+<!--
+    Display all projects for the current user
+-->
+
+<template name="listProjects">
+
+    {{> instructionsRow text2="Click/tap an existing project or add a new one with the + button"}}
+
+    <!-- Content Row: List a user's projects -->
+    <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+        </div>
+
+        <div class="mdl-cell mdl-cell--8-col">
+            <div class="mdl-grid">
+                {{#each projectsList}}
+                    {{> projectItem}}
+                {{else}}
+                    <p><i class="material-icons">info</i>You have no projects. Click/tap the + button to one.</p>
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--2-col">
+        </div>
+    </div>
+
+    <!-- Add Project floating button -->
+    {{#if isMenuEnabled.projectAdd}}
+        <button id="add-project-button"
+                class="add-project-button FAB-bottom-right mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored secondary-accent-color">
+            <i class="material-icons">add</i>
+        </button>
+    {{else}}
+        <button class="FAB-bottom-right mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored secondary-accent-color"
+                disabled>
+            <i class="material-icons">add</i>
+        </button>
+    {{/if}}
+</template>
+
+
+<template name="projectItem">
+
+    <div class="mdl-cell mdl-cell--4-col">
+
+        <div class="project-card mdl-card mdl-shadow--2dp">
+            <div class="project-item mdl-card__title golden-ratio-landscape"
+                 style="background: url('{{image}}') center / cover">
+                <h2 class="mdl-card__title-text golden-ratio-content">{{name}}</h2>
+            </div>
+            <div class="project-item mdl-card__supporting-text">
+                {{description}}
+            </div>
+        </div>
+    </div>
+</template>
+

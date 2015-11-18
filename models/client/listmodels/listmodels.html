@@ -1,0 +1,68 @@
+<!--
+    Model Item template
+-->
+
+<template name="listModels">
+
+    {{> sectionHeadingRow text2="Models"}}
+    {{> instructionsRow text2="Click/tap an existing model or add a new one with the + button"}}
+
+    <!-- Content Row: List a project's models -->
+    <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--2-col">
+        </div>
+
+        <div class="mdl-cell mdl-cell--8-col">
+            <div class="mdl-grid">
+                {{#each modelsList}}
+                    {{> modelItem}}
+                {{else}}
+                    <p><i class="material-icons">info</i>This project has no models. Click/tap the + button to add one.</p>
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--2-col">
+            <div class="centre-block" style="width: 56px;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Add model floating button -->
+    {{#if isMenuEnabled.modelAdd}}
+        <button id="add-model-button"
+                class="add-model-button FAB-bottom-right mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored secondary-accent-color">
+            <i class="material-icons">add</i>
+        </button>
+    {{else}}
+        <button class="add-model-button FAB-bottom-right mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored secondary-accent-color"
+                disabled>
+            <i class="material-icons">add</i>
+        </button>
+    {{/if}}
+
+
+</template>
+
+
+<template name="modelItem">
+
+    <div class="mdl-cell mdl-cell--4-col">
+
+        <div class="model-card mdl-card mdl-shadow--2dp">
+            <div class="model-item mdl-card__title golden-ratio-landscape"
+                 style="background: url('{{image}}') center / cover">
+                <h2 class="mdl-card__title-text golden-ratio-content">{{name}}</h2>
+            </div>
+            <div class="model-item mdl-card__supporting-text">
+                {{description}}
+            </div>
+        </div>
+
+    </div>
+
+</template>
+
+
+
+
