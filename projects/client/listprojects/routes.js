@@ -14,9 +14,9 @@ Router.route('/projects', {
     data: function () {
         // Set the data context fro the template
         // Returns all projects owned by or shared to teh current user
-        // Most recent project is first
+        // Sort by 'Order' first then reverse chronological date (Most recent project first)
         return {
-            projectsList: ProjectsCollection.find({}, {sort: {createdAt: -1}})
+            projectsList: ProjectsCollection.find({}, {sort: {order:1, createdAt: -1}})
         };
     },
 

@@ -7,13 +7,14 @@
 .app-content {
 }
 
-
+/* Grey 100 */
+/*
 .mdl-grid > .mdl-cell {
-    border-color: #F5F5F5;    /* Grey 100 */
+    border-color: #F5F5F5;
     border-style: solid;
     border-width: thin;
 }
-
+*/
 
 .text-centre-vertically, .text-center-vertically {
     margin-top: auto;
@@ -27,11 +28,31 @@
     */
 }
 
-.centre-block {
+/* Centre block horizontally within the parent element */
+.centre-block-horizontally {
     display: block;
     margin-left: auto;
     margin-right: auto;
     /* The block must have a set width (can be %), otherwise it's full width and can't be centred */
+}
+
+/* Helper to vertically align an image in the parent block
+ Place this directly above the image
+ The image must have xxx set
+ */
+.img-vertical-align-helper {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+/* Centre block vertically within the parent element*/
+.centre-block-vertically {
+    vertical-align: middle;
+}
+
+.bold {
+    font-weight: 500;
 }
 
 .instructions {
@@ -51,7 +72,7 @@
     display: block;
 }
 
-.body_text {
+.body-text {
     font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
     font-size: 12pt;
     font-weight: 300;
@@ -64,11 +85,7 @@
     display: inline;
 }
 
-.paper_letterpress {
-    /* x-offset y-offset blur color */
-    text-shadow: 0 2px 3px #555;
-}
-
+/* Force the field name element to be a block */
 .field-name:before {
     content: ' ';
     clear: right;
@@ -80,6 +97,14 @@
     display: inline;
 }
 
+.img-circle {
+    border-radius: 50%;
+}
+
+.paper_letterpress {
+    /* x-offset y-offset blur color */
+    text-shadow: 0 2px 3px #555;
+}
 
 .mdl-card__title, .mdl-card__menu {
     color: #fff;

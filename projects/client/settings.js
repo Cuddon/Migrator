@@ -6,5 +6,6 @@
 
 clientSettings.project = {
     nameMaxLength: 50,
-    descriptionMaxLength: 100
+    descriptionMaxLength: 100,
+    orderMaxLength: 6
 };

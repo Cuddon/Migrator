@@ -22,7 +22,6 @@ Meteor.methods({
         check(project, {
             name: String,
             description: String,
-            notes: String,
             image: String
         });
 
@@ -33,10 +32,13 @@ Meteor.methods({
 
         // Set a default logo
         if (!project.image) {
-            project.image = "http://lorempixel.com/336/200/abstract";     // Default project logo. 320x200px
+            project.image = settings.defaultProjectImage;
         }
 
         // Add additional fields (server use only, never transmitted to a client)
+        project.notes = "";    // User editable field for any notes related to the project
+        project.order = 0;    // User editable field for sort order
+
         project.ownerId = Meteor.userId();      // Logged in user is the initial owner
         project.sharedToId = null;              // The project is not shared to anyone yet
         project.createdAt = new Date();         // current date/time

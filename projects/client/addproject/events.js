@@ -6,7 +6,6 @@ Template.addProject.events({
         var project = {
             name: event.target.name.value,
             description: event.target.description.value,
-            notes: event.target.notes.value,
             image: event.target.imageUrl.value
         };
 
@@ -36,11 +35,10 @@ Template.addProject.events({
         var project = {
             name: $('#name').val(),
             description: $('#description').val(),
-            notes: $('#notes').val(),
             image: $('#imageUrl').val()
         };
 
-        if (project.name === "" && project.description === "" && project.notes === "" && project.image === "") {
+        if (project.name === "" && project.description === "" && project.image === "") {
             // All inputs are empty so ok to cancel
             Router.go("projects");
         } else {

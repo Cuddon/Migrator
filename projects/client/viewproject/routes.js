@@ -25,7 +25,7 @@ Router.route('/project/:_id', {
         // Return the project and all models within it
         return {
             project: ProjectsCollection.findOne({_id: projectId}),
-            modelsList: ModelsCollection.find({projectId: projectId})
+            modelsList: ModelsCollection.find({projectId: projectId}, {sort: {order: 1, createdAt: -1}})
         }
     },
 

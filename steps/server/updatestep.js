@@ -33,6 +33,7 @@ Meteor.methods({
             name: String,
             description: String,
             notes: String,
+            order: Number,
             image: String
         });
 
@@ -49,6 +50,8 @@ Meteor.methods({
         if (!step.name) {
             throw new Meteor.Error('mandatory fields', "A step name is mandatory.");
         }
+
+        // TODO: Save the step group index (not the text, so the group name can be edited easily
 
         // Update additional server-side attributes
         step['updatedBy'] = Meteor.userId();

@@ -14,7 +14,6 @@ Template.addModel.events({
         var model = {
             name: event.target.name.value,
             description: event.target.description.value,
-            notes: event.target.notes.value,
             image: event.target.imageUrl.value,
             projectId: projectId
         };
@@ -46,11 +45,10 @@ Template.addModel.events({
         var model = {
             name: $('#name').val(),
             description: $('#description').val(),
-            notes: $('#notes').val(),
             image: $('#imageUrl').val()
         };
 
-        if (model.name === "" && model.description === "" && model.notes === "" && model.image === "") {
+        if (model.name === "" && model.description === "" && model.image === "") {
             // All inputs are empty so ok to cancel
             Router.go("project", {_id: this.project._id});
         } else {

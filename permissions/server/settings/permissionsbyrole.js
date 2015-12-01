@@ -18,6 +18,7 @@ settings.roleBasedPermissions = {
     projectOwner    : [
         'projectsList-view', 'project-update', 'project-delete', 'project-share',
         'modelsList-view', 'model-add', 'model-update', 'model-delete', 'model-run',
+        'model-add-step-group', 'model-delete-step-group',
         'stepsList-view', 'step-add', 'step-update', 'step-delete'
     ],
 

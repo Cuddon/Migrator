@@ -6,41 +6,6 @@
 
 Template.editProject.events({
 
-    // Back button is clicked, go back to the previous screen (typically the user's projects list)
-    "click .cancel-button": function () {
-
-        // Original (saved in the database) and updated values
-        var original = {
-            name: this.project.name,
-            description: this.project.description,
-            notes: this.project.notes,
-            image: this.project.image
-        };
-        var updated = {
-            name: $('#name').val(),
-            description: $('#description').val(),
-            notes: $('#notes').val(),
-            image: $('#imageUrl').val()
-        };
-
-        // Check if the user has changed anything
-        if (!_.isEqual(original, updated)) {
-            // Data has changed so ask the user if they really want to cancel
-            var conf = confirm("Changes not saved.\nDo you really want to cancel your edits?");
-            if (conf === true) {
-                // User confirmed yes so just go back to viewing the project without saving the changes
-                Router.go('/project/' + this.project._id);
-            }
-        } else {
-            // Data has not changed so return to the project
-            Router.go('/project/' + this.project._id);
-        }
-
-        // Prevent default form action
-        return false;
-    },
-
-
     // Save button is clicked
     "click .save-button": function () {
 
@@ -48,6 +13,7 @@ Template.editProject.events({
             _id: this.project._id,
             name: $('#name').val(),
             description: $('#description').val(),
+            order:      Number($('#order').val()),
             notes: $('#notes').val(),
             image: $('#imageUrl').val()
         };
@@ -60,12 +26,48 @@ Template.editProject.events({
                 showError("database-error", 'Error updating your project. Please try again');
             } else {
                 // success
-                Router.go('/project/' + project._id);
+                Router.go('project', {_id:  project._id});
             }
         });
 
         // Prevent default form action
         return false;
-    }
+    },
 
+
+    // Back button is clicked, go back to the previous screen (typically the user's projects list)
+    "click .cancel-button": function () {
+
+        // Original (saved in the database) and updated values
+        var original = {
+            name: this.project.name,
+            description: this.project.description,
+            order:  this.project.order,
+            notes: this.project.notes,
+            image: this.project.image
+        };
+        var updated = {
+            name: $('#name').val(),
+            description: $('#description').val(),
+            order:  Number($('#order').val()),
+            notes: $('#notes').val(),
+            image: $('#imageUrl').val()
+        };
+
+        // Check if the user has changed anything
+        if (!_.isEqual(original, updated)) {
+            // Data has changed so ask the user if they really want to cancel
+            var conf = confirm("Changes not saved.\nDo you really want to cancel your edits?");
+            if (conf === true) {
+                // User confirmed yes so just go back to viewing the project without saving the changes
+                Router.go('project', {_id:  this.project._id});
+            }
+        } else {
+            // Data has not changed so return to the project
+            Router.go('project', {_id:  this.project._id});
+        }
+
+        // Prevent default form action
+        return false;
+    }
 });

@@ -32,6 +32,7 @@ Meteor.methods({
             _id: String,
             name: String,
             description: String,
+            order: Number,
             notes: String,
             image: String,
             // Optional, but if present must be an array of strings.

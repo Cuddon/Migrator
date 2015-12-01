@@ -29,10 +29,12 @@ Meteor.methods({
         // Check that all attributes are of the correct type
         check(model, {
             _id:  String,
+            order: Number,
             projectId:  String,
             name: String,
             description: String,
             notes: String,
+            stepGroups: [String],
             image: String
         });
 

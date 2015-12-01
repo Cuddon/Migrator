@@ -42,6 +42,25 @@
             </div>
         </div>
 
+        <!-- Project Order -->
+        <div class="mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                    <input class="mdl-textfield__input" type="number" id="order"
+                           value="{{project.order}}" maxlength="{{clientSettings.project.orderMaxLength}}"/>
+                    <label class="mdl-textfield__label" for="order">Sort Order</label>
+                </div>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+        </div>
+
         <!-- project notes -->
         <div class="mdl-grid mdl-grid--no-spacing">
             <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
@@ -60,6 +79,7 @@
             </div>
         </div>
 
+        <!-- project image -->
         <div class="mdl-grid mdl-grid--no-spacing">
             <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
             </div>
@@ -67,7 +87,7 @@
             </div>
             <div class="mdl-cell mdl-cell--4-col">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
-                    <input type="url" class="mdl-textfield__input" id="imageUrl" value="{{project.image}}"/>
+                    <input type="text" class="mdl-textfield__input" id="imageUrl" value="{{project.image}}"/>
                     <label class="mdl-textfield__label" for="imageUrl">Project Image/Logo</label>
                 </div>
             </div>

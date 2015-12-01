@@ -27,7 +27,8 @@ Meteor.methods({
             modelId: String,
             name: String,
             description: String,
-            notes: String,
+            stepGroup: Number,
+            order: Number,
             image: String
         });
 
@@ -43,8 +44,10 @@ Meteor.methods({
         }
 
         // Add additional info
+        //step.order = 0;    // User editable field for sort order
+        step.notes = "";
         if (step.image.trim() === "") {
-            step.image = "/images/abstract-q-c-336-200-7.jpg";     // Default model image
+            step.image = settings.defaultStepImage;
         }
         step.ownerId = this.userId;  // Logged in user is the initial owner
         step.sharedToId = null;          // The step is not shared to anyone yet

@@ -68,8 +68,8 @@
     background: #03A9F4;
 }
 
-.divider-color {
-    /* Light grey */
-    border-color: #B6B6B6;
+.divider-border-color {
+    /* Grey 300 */
+    border-color: #E0E0E0;
 }
 

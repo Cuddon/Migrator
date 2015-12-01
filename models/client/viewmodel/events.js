@@ -46,14 +46,13 @@ Template.viewModel.events({
 
     // Edit button is clicked
     "click .edit-button": function () {
-
-        var modelId = this.model._id;
-        var projectId = this.model.projectId;
-        Router.go('/project/' + projectId + '/model/' + modelId + '/edit');
+        // Edit the model details
+        Router.go('editModel', {_id: this.model._id, projectId: this.model.projectId });
 
         // Prevent default form action
         return false;
     },
+
 
     // Clone button is clicked
     "click .clone-button": function () {
@@ -62,6 +61,7 @@ Template.viewModel.events({
         // Prevent default form action
         //return false;
     },
+
 
     // Share button is clicked
     "click .share-button": function () {

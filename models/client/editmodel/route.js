@@ -1,11 +1,11 @@
 /**
- * Edit a model - route controlller
+ * Edit a model - route controller
  */
 
-// Edit a project's details
+// Edit a model's details
 Router.route('/project/:projectId/model/:_id/edit', {
 
-    name: 'editmodel',
+    name: 'editModel',
 
     subscriptions: function () {
         // This limits what the client can see (what is synced to the minimongo on the client)
@@ -13,7 +13,7 @@ Router.route('/project/:projectId/model/:_id/edit', {
         return [
             // All project for this user (owned or sharedTo)
             // All models for the selected project
-            Meteor.subscribe("projects"),
+            //Meteor.subscribe("projects"),
             Meteor.subscribe('models', projectId)
         ];
     },
@@ -21,10 +21,10 @@ Router.route('/project/:projectId/model/:_id/edit', {
     data: function () {
         // Set the data context for the template (client reads from the local minimongo DB)
         // Return the selected model and the name and id of the project it belongs to
-        var projectId = this.params.projectId;
+        //var projectId = this.params.projectId;
         var modelId = this.params._id;
         return {
-            project: ProjectsCollection.findOne({_id: projectId}, {fields: {_id: 1, name: 1}}),
+            //project: ProjectsCollection.findOne({_id: projectId}, {fields: {_id: 1, name: 1}}),
             model: ModelsCollection.findOne({_id: modelId})
         };
     },

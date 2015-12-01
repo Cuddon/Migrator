@@ -33,7 +33,8 @@ Router.route('/project/:projectId/model/:_id', {
         return {
             project: ProjectsCollection.findOne({_id: projectId}, {fields: {_id: 1, name: 1}}),
             model: ModelsCollection.findOne({_id: modelId}),
-            stepsList: StepsCollection.find({modelId: modelId})
+            //stepsList: StepsCollection.find({modelId: modelId}, {sort: {stepGroup: 1, order: 1, createdAt: -1}})
+            // stepsList is provided by a helper (for each step group)
         };
     },
 

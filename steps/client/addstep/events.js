@@ -2,7 +2,6 @@
  * addStep events
  */
 
-
 Template.addStep.events({
 
     // Add model form is submitted
@@ -15,7 +14,8 @@ Template.addStep.events({
         var step = {
             name: event.target.name.value,
             description: event.target.description.value,
-            notes: event.target.notes.value,
+            stepGroup: Number(event.target.stepGroup.value),
+            order: Number(event.target.order.value),
             image: event.target.imageUrl.value,
             projectId: projectId,
             modelId: modelId
@@ -26,14 +26,13 @@ Template.addStep.events({
             return false;
         }
 
-
-        // Add the new model to the database using a server method
+        // Add the new step to the database using a server method
         Meteor.call('addStep', step, function (error) {
             if (error) {
                 // Display the error to the client, and stay on the same page
                 showError(error.error, error.reason)
             } else {
-                // Success, go back to displaying the model and it's list of steps
+                // Success, go back to displaying the parent model and it's list of steps
                 Router.go("model", {projectId: projectId, _id: modelId});
             }
         });
@@ -48,21 +47,26 @@ Template.addStep.events({
         var step = {
             name: $('#name').val(),
             description: $('#description').val(),
-            notes: $('#notes').val(),
+            stepGroup: $('#stepGroup').val(),
+            order: $('#order').val(),
             image: $('#imageUrl').val()
         };
 
-        if (step.name === "" && step.description === "" && step.notes === "" && step.image === "") {
+        if (allTextItemsEmpty(step)) {
             // All inputs are empty so ok to cancel
+            step.stepGroup = Number(step.stepGroup);
+            step.order = Number(step.order);
+            // Go back to the parent model and it's list of steps
             Router.go("model", {projectId: this.project._id, _id: this.model._id});
         } else {
             // At least one input has been entered so ask the user if they really want to cancel
             var conf = confirm("You have entered some information.\nDo you really want to cancel?");
             if (conf === true) {
-                // User confirmed yes so just go back to the models lists without saving the changes
+                // User confirmed yes
+                // // Success, go back to displaying the parent model and it's list of steps
                 Router.go("model", {projectId: this.project._id, _id: this.model._id});
             } else {
-                // Do nothing
+                // User cancelled the action so do nothing
             }
         }
 
@@ -71,3 +75,20 @@ Template.addStep.events({
     }
 });
 
+
+allTextItemsEmpty = function (obj) {
+    /*
+    *   Check if all text attributes of an object are empty
+     */
+    for (var prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+            if (typeof obj[prop] === 'string') {
+                if (!(obj[prop] === "" || typeof obj[prop] === 'undefined')) {
+                    // not empty
+                    return false
+                }
+            }
+        }
+    }
+    return true;
+};

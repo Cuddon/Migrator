@@ -1,9 +1,3 @@
-# Meteor commands
-
-
-## Update
-
-    meteor update
 
 ## List packages
 
@@ -27,12 +21,3 @@
     standard-minifiers         1.0.2  Standard minifiers used with Meteor apps by default.
     tracker                    1.0.9  Dependency tracker to allow reactive callbacks
     zodiase:mdl                1.0.6_1  A wrapper package for Google's Material Design Lite.
-
-
-## Remove a package
-
-    meteor remove <package>
-
-## Add a package
-
-    meteor add <package>

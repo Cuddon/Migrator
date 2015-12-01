@@ -1,8 +1,22 @@
 
-.step-card.mdl-card {
-    width: 100%;        /* 100% of the width of the column/cell */
+.step-item {
+    border: solid;
+    /* Grey 300 #E0E0E0*/
+    border-color: #E0E0E0;
+    border-width: thin;
+    height: 100px;
+    /* Margin top right bottom left */
+    /* Top margin -1 px so we do not get double the border when items abut each other */
+    margin: -1px 0 0 0;
 }
 
-.step-card > .mdl-card__supporting-text {
-    height: 60px;
+/* Exsure the top border f the first item in the list is displayed */
+.step-item:first-of-type {
+    margin-top: 1px;
+}
+
+
+/* Content container */
+.step-item > .step-content {
+    padding:20px;
 }

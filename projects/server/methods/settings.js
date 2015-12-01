@@ -1,5 +1,5 @@
 /**
- * Images for Projects etc
+ * Server side settings for Projects etc
  */
 
 
@@ -9,4 +9,6 @@ settings.projectImages = [
     {label: 'Flower', url: "/images/flower.jpeg"},
     {label: 'Random Nature (url)', url: "http://lorempixel.com/56/56/nature"}
 ];
+
+settings.defaultProjectImage = "/images/abstract.jpg";
 

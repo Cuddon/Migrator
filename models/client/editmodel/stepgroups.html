@@ -1,0 +1,45 @@
+<template name="editStepGroups">
+
+    <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            Step Groups
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+            {{#each group in model.stepGroups}}
+                <div class="mdl-grid mdl-grid--no-spacing">
+                    <div class="mdl-cell mdl-cell--11-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                            <input class="mdl-textfield__input step-groups" name="group{{@index}}" type="text"
+                                   value="{{group}}" maxlength="100"/>
+                            <label class="mdl-textfield__label" for="group{{@index}}">Step Group</label>
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--1-col">
+                        <button class="delete-step-group-button mdl-button mdl-js-button mdl-button--icon"
+                                id="{{@index}}">
+                            <i class="material-icons">clear</i>
+                        </button>
+                    </div>
+                </div>
+            {{else}}
+                <p><i class="material-icons">info</i>Your model has no steps groups.</p>
+            {{/each}}
+
+            <button class="add-step-group-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                Add Group
+            </button>
+            <button class="add-step-group-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                    disabled>
+                Reorder Groups
+            </button>
+        </div>
+
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+        </div>
+        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+        </div>
+    </div>
+
+</template>

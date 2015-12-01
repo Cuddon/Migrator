@@ -73,8 +73,27 @@
             </div>
         </div>
 
+        <!-- Step Group -->
+        <div class="mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">Step group
+            </div>
+            <div class="mdl-cell mdl-cell--4-col">
+                <select id="stepGroup">
+                    <option value="" selected>No group selected</option>
+                    {{#each item in model.stepGroups}}
+                        <option value="{{@index}}">{{item}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            </div>
+        </div>
 
-        <!-- Notes row -->
+        <!-- Step Order -->
         <div class="mdl-grid mdl-grid--no-spacing">
             <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
             </div>
@@ -82,8 +101,9 @@
             </div>
             <div class="mdl-cell mdl-cell--4-col">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
-                    <textarea class="mdl-textfield__input" type="text" rows="3" id="notes"></textarea>
-                    <label class="mdl-textfield__label" for="notes">Notes</label>
+                    <input class="mdl-textfield__input" type="text" id="order"
+                           maxlength="{{clientSettings.step.orderMaxLength}}"/>
+                    <label class="mdl-textfield__label" for="order">Order (within the step group)</label>
                 </div>
             </div>
             <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
@@ -91,6 +111,7 @@
             <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
             </div>
         </div>
+
 
         <!-- Image row -->
         <div class="mdl-grid mdl-grid--no-spacing">

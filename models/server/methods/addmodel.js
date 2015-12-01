@@ -22,7 +22,6 @@ Meteor.methods({
             projectId: String,
             name: String,
             description: String,
-            notes: String,
             image: String
         });
 
@@ -35,8 +34,11 @@ Meteor.methods({
         }
 
         // Add additional info
+        model.order = 0;    // User editable field for sort order
+        model.stepGroups = [];
+        model.notes = "";    // User editable field for sort order
         if (model.image.trim() === "") {
-            model.image = "http://lorempixel.com/336/200/nature";     // Default model image
+            model.image = settings.defaultModelImage;     // Default model image
         }
         model.ownerId = this.userId;  // Logged in user is the initial owner
         model.sharedToId = null;          // The model is not shared to anyone yet
