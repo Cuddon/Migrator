@@ -1,0 +1,10 @@
+{
+  "_id" : "cK2xgojhcPMP6haw9",
+  "category": "Parsers",
+  "name": "Test Stencil",
+  "description": "What the step does. Mxx 100 chars",
+  "tags": ["tag1", "tag2"],
+  "hoverText": " A longer description perhaps",
+  "version": "v0.0.0",
+  "accounts": [100,1010]
+}

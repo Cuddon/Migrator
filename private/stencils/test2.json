@@ -1,0 +1,10 @@
+{
+  "_id" : "sh5rNGLnQGN23Qjhs",
+  "category": "Doovas",
+  "name": "Test 2 stencil",
+  "description": "What the step does. Mxx 100 chars",
+  "tags": ["tag1", "tag2"],
+  "hoverText": " A longer description perhaps",
+  "version": "v0.0.0",
+  "accounts": [100]
+}

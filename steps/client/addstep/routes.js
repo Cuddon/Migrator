@@ -17,7 +17,8 @@ Router.route('/project/:projectId/model/:modelId/addStep', {
             // All projects owned by the user or shared to him/her
             // All models for the selected project
             Meteor.subscribe("projects"),
-            Meteor.subscribe("models", projectId)
+            Meteor.subscribe("models", projectId),
+            Meteor.subscribe("stencils")
         ];
     },
 
@@ -30,7 +31,7 @@ Router.route('/project/:projectId/model/:modelId/addStep', {
         // Return the parent project and the parent model
         return {
             project: ProjectsCollection.findOne({_id: projectId}, {fields: {_id: 1, name: 1}}),
-            model: ModelsCollection.findOne({_id: modelId})
+            model: ModelsCollection.findOne({_id: modelId}),
         };
     },
 
@@ -46,7 +47,3 @@ Router.route('/project/:projectId/model/:modelId/addStep', {
         }
     }
 });
-
-
-
-

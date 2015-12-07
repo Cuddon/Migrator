@@ -1,0 +1,9 @@
+{
+  "_id": "",
+  "categories": ["Parsers", "Thingies"],
+  "name": "A blah step",
+  "description": "What the step does. Mxx 100 chars",
+  "hoverText": " A longer description perhaps",
+  "version": "v0.0.0",
+  "accounts": [100,1010]
+}

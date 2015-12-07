@@ -1,0 +1,17 @@
+{
+  "panel": {
+    "title": "Test Panel"
+  },
+  "fields": [
+    {
+      "name": "template",
+      "fieldGroup" : 1,
+      "fieldType": "display, input, control",
+      "contentType": "string, markdown, number format url",
+      "contentFormat": "integer, float 6.3 etc",
+      "value": "Initial or default value",
+      "saveTo": "variable name or null (inputs only)",
+      "method": "method name (controls only)"
+    }
+  ]
+}

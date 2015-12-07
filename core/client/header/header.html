@@ -80,6 +80,9 @@
                     <a class="mdl-navigation__link" href="{{ pathFor 'settings' }}">Settings</a>
                 {{/if}}
 
+                {{#if admin}}
+                    <a class="mdl-navigation__link" href="{{ pathFor 'admin' }}">Admin</a>
+                {{/if}}
                 {{#if about}}
                     <a class="mdl-navigation__link" href="{{ pathFor 'about' }}">About</a>
                 {{/if}}

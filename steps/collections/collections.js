@@ -1,6 +1,7 @@
 /**
- * Created by andrew on 14/11/2015.
+ * Define collections on both the client and server
  */
 
-// On Client and Server
+// User configured steps for the current model
 StepsCollection = new Mongo.Collection("steps");
+

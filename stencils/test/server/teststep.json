@@ -1,0 +1,13 @@
+{
+  "_id": "",
+  "name": "Test step",
+  "version": "0.0.0",
+  "date": "11/11/11",
+  "panels": [
+    "input",
+    "transform",
+    "output",
+    "run",
+    "help"
+  ]
+}

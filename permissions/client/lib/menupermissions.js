@@ -48,8 +48,9 @@ clientSettings.enabledMenus = {
         StepView: true,
         stepAdd: true,
         stepClone: false,
-        stepDelete: true
+        stepDelete: true,
 
+        admin: true
     },
 
     // No Limits account
@@ -59,5 +60,7 @@ clientSettings.enabledMenus = {
     300: {},
 
     // General admin
-    10001: {}
+    10001: {
+        admin: true
+    }
 };

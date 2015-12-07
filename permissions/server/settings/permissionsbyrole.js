@@ -48,7 +48,6 @@ settings.roleBasedPermissions = {
 
     // Administrators
     admin : [
-        'user-view', 'user-edit',
-        'project-reassign-owner'
+        'stencil-register'
     ]
 };

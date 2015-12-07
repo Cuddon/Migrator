@@ -1,0 +1,67 @@
+<template name="selectStencil">
+
+    {{> instructionsRow text2="Select a stencil and click the save button"}}
+
+
+    {{#each category in stencilCategories}}
+        <!-- New row -->
+        <div class="mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--2-col">
+            </div>
+            <div class="mdl-cell mdl-cell--8-col">
+                <div class="section_heading">{{category}}</div>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col">
+            </div>
+        </div>
+
+        <div>
+            {{#each stencilsList category}}
+                <!-- New row for each stencil within the category -->
+                <div class="mdl-grid mdl-grid--no-spacing">
+                    <div class="mdl-cell mdl-cell--2-col">
+                    </div>
+                    <div class="mdl-cell mdl-cell--8-col">
+                        {{> stencilItem}}
+                    </div>
+                    <div class="mdl-cell mdl-cell--2-col">
+                    </div>
+                </div>
+            {{else}}
+                <div class="mdl-grid mdl-grid--no-spacing">
+                    <div class="mdl-cell mdl-cell--2-col">
+                    </div>
+                    <div class="mdl-cell mdl-cell--8-col">
+                        <p><i class="material-icons">info</i>Error no stencils available. Contact support.</p>
+                    </div>
+                    <div class="mdl-cell mdl-cell--2-col">
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    {{/each}}
+
+    <button type="button"
+            class="cancel-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+        Cancel
+    </button>
+
+
+</template>
+
+<template name="stencilItem">
+    <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--8-col">
+            {{name}} ({{version}})
+            {{description}}
+            {{tags}}
+        </div>
+
+        <div class="mdl-cell mdl-cell--2-col">
+            <button type="button"
+                    class="select-stencil-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                Select
+            </button>
+        </div>
+    </div>
+</template>

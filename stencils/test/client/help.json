@@ -1,0 +1,45 @@
+{
+  "panel": {
+    "title": "Test Panel"
+  },
+  "fields": [
+    {
+      "name": "template",
+      "fieldGroup" : 1,
+      "fieldType": "display, input, control",
+      "contentType": "string, markdown, number format url",
+      "contentFormat": "integer, float 6.3 etc",
+      "value": "This step does something really interesting. The description can include Markdown",
+      "saveTo": "variable name or null (inputs only)",
+      "method": "method name (controls only)"
+    },
+    {
+      "name": "description",
+      "fieldGroup" : 1,
+      "fieldType": "display",
+      "contentType": "markdown",
+      "value": "#Heading1 \n This is a _description_ of the test step in plain text"
+    },
+    {
+      "name": "instructions",
+      "fieldGroup": 2,
+      "fieldType": "display",
+      "contentType": "markdown",
+      "value": "These are the __instructions__, which can include Markdown. The widget will need to be scrollable."
+    },
+
+    {
+      "name": "heading",
+      "fieldGroup" : 3,
+      "fieldType": "display",
+      "contentType": "format",
+      "contentFormat": "heading1",
+      "value": "Links"
+    },
+    {
+      "name": "links",
+      "fieldGroup" : 3,
+      "value": "http://example.com"
+    }
+  ]
+}
