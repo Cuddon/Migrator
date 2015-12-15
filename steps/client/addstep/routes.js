@@ -31,19 +31,20 @@ Router.route('/project/:projectId/model/:modelId/addStep', {
         // Return the parent project and the parent model
         return {
             project: ProjectsCollection.findOne({_id: projectId}, {fields: {_id: 1, name: 1}}),
-            model: ModelsCollection.findOne({_id: modelId}),
+            model: ModelsCollection.findOne({_id: modelId})
         };
     },
 
     action: function() {
         // Render the template into the content area
         if (Meteor.userId()) {
-            this.render('addStep', {to: 'content'});
             Session.set('activity', "Add a new step");
+            this.render('addStep', {to: 'content'});
+
         } else {
             alert ("You must be logged in to add a new step");
-            this.render('Home', {to: 'content'});
             Session.set('activity', "Home");
+            this.render('Home', {to: 'content'});
         }
     }
 });

@@ -1,180 +1,191 @@
 <!-- Add a new step for a project -->
+
 <template name="addStep">
 
-    {{> instructionsRow text2="Add a new step to the selected model and click the save button"}}
+    <div id="add-step-section">
+        {{> instructionsRow text2="Add a new step to the selected model and click the save button"}}
 
-    <form action="#">
+        <form action="#">
 
-        <!-- Project name row -->
-        <div class="mdl-grid mdl-grid--no-spacing">
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--4-col">
-                <div>Project: {{project.name}}</div>
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-        </div>
-
-        <!-- Model name -->
-        <div class="mdl-grid mdl-grid--no-spacing">
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--4-col">
-                <div>Model: {{model.name}}</div>
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-        </div>
-
-        <!-- Step Name -->
-        <div class="mdl-grid mdl-grid--no-spacing">
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--4-col">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
-                    <input class="mdl-textfield__input" type="text" id="name"
-                           maxlength="{{clientSettings.step.nameMaxLength}}"/>
-                    <label class="mdl-textfield__label" for="name">Step name</label>
+            <!-- Project name row -->
+            <div class="mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <div>Project: {{project.name}}</div>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
                 </div>
             </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-        </div>
 
-        <!-- Step Description -->
-        <div class="mdl-grid mdl-grid--no-spacing">
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            <!-- Model name -->
+            <div class="mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <div>Model: {{model.name}}</div>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
             </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+
+            <!-- Step Name -->
+            <div class="mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                        <input class="mdl-textfield__input" type="text" id="name"
+                               maxlength="{{clientSettings.step.nameMaxLength}}"/>
+                        <label class="mdl-textfield__label" for="name">Step name</label>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
             </div>
-            <div class="mdl-cell mdl-cell--4-col">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+
+            <!-- Step Description -->
+            <div class="mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
                     <textarea class="mdl-textfield__input" type="text" rows="3" id="description" name="description"
                               maxlength="{{clientSettings.step.descriptionMaxLength}}"></textarea>
-                    <label class="mdl-textfield__label" for="description">Description</label>
+                        <label class="mdl-textfield__label" for="description">Description</label>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
                 </div>
             </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-        </div>
 
-        <!-- Step Stencil -->
+            <!-- Step Stencil -->
 
-        <div class="mdl-grid mdl-grid--no-spacing">
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">Stencil
-            </div>
-            <div class="mdl-cell mdl-cell--4-col">
-                <button type="button"
-                        class="select-stencil-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-                    Select a stencil
-                </button>
-                <div id="stencil">Stencil: {{selectedStencil.name}}</div>
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-        </div>
-
-
-        <!-- Step Group -->
-        <div class="mdl-grid mdl-grid--no-spacing">
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">Step group
-            </div>
-            <div class="mdl-cell mdl-cell--4-col">
-                <select id="stepGroup">
-                    <option value="" selected>No group selected</option>
-                    {{#each item in model.stepGroups}}
-                        <option value="{{@index}}">{{item}}</option>
-                    {{/each}}
-                </select>
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-        </div>
-
-        <!-- Step Order -->
-        <div class="mdl-grid mdl-grid--no-spacing">
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--4-col">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
-                    <input class="mdl-textfield__input" type="text" id="order"
-                           maxlength="{{clientSettings.step.orderMaxLength}}"/>
-                    <label class="mdl-textfield__label" for="order">Order (within the step group)</label>
+            <div class="mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">Stencil
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <button type="button"
+                            class="select-stencil-button mdl-button mdl-js-button mdl-js-ripple-effect">
+                        Select a stencil
+                    </button>
+                    {{#if stencil}}
+                        <span>Stencil:</span>
+                        <span id="stencil">{{stencil.name}} ({{stencil.version}})</span>
+                    {{/if}}
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
                 </div>
             </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-        </div>
 
 
-        <!-- Image row -->
-        <div class="mdl-grid mdl-grid--no-spacing">
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--4-col">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
-                    <input class="mdl-textfield__input mdl-textfield--full-width" id="imageUrl">
-                    <label class="mdl-textfield__label" for="imageUrl">Image URL</label>
+            <!-- Step Group -->
+            <div class="mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">Step group
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <select id="stepGroup">
+                        <option value="" selected>No group selected</option>
+                        {{#each item in model.stepGroups}}
+                            <option value="{{@index}}">{{item}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
                 </div>
             </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-        </div>
 
-        <!-- Action Buttons row -->
-        <div class="mdl-grid mdl-grid--no-spacing">
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+            <!-- Step Order -->
+            <div class="mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                        <input class="mdl-textfield__input" type="text" id="order"
+                               maxlength="{{clientSettings.step.orderMaxLength}}"/>
+                        <label class="mdl-textfield__label" for="order">Order (within the step group)</label>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
             </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--4-col">
-                <button type="button"
-                        class="cancel-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-                    Cancel
-                </button>
-                <button type="submit"
-                        class="save-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                    Save
-                </button>
 
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-            </div>
-        </div>
 
-    </form>
+            <!-- Image row -->
+            <div class="mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                        <input class="mdl-textfield__input mdl-textfield--full-width" id="imageUrl">
+                        <label class="mdl-textfield__label" for="imageUrl">Image URL</label>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+            </div>
+
+            <!-- Action Buttons row -->
+            <div class="mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <button type="button"
+                            class="cancel-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                        Cancel
+                    </button>
+                    <button type="submit"
+                            class="save-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        Save
+                    </button>
+
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <div id="select-stencil-section" style="display: none;">
+        {{> selectStencil}}
+    </div>
+
 
 </template>

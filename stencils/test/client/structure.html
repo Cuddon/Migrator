@@ -1,0 +1,58 @@
+<template name="cK2xgojhcPMP6haw9">
+
+    {{!
+        Test stencil
+    }}
+
+    <div class="stepDetails">
+        <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+            <div class="mdl-tabs__tab-bar">
+                <a href="#input-panel" class="mdl-tabs__tab is-active">Input</a>
+                <a href="#transform-panel" class="mdl-tabs__tab">Transform</a>
+                <a href="#output-panel" class="mdl-tabs__tab">Output</a>
+                <a href="#run-panel" class="mdl-tabs__tab">Run</a>
+                <a href="#help-panel" class="mdl-tabs__tab">Help</a>
+            </div>
+
+            <div class="mdl-tabs__panel is-active" id="input-panel">
+                {{> inputTab}}
+            </div>
+
+            <div class="mdl-tabs__panel" id="transform-panel">
+                {{> transformTab}}
+            </div>
+            <div class="mdl-tabs__panel" id="output-panel">
+                {{> outputTab}}
+            </div>
+            <div class="mdl-tabs__panel" id="run-panel">
+                {{> runTab}}
+            </div>
+
+            <div class="mdl-tabs__panel" id="help-panel">
+                {{> helpTab}}
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<template name="inputTab">
+    <p>Inputs for {{stencilId}}</p>
+</template>
+
+<template name="transformTab">
+    <p>Transform</p>
+</template>
+
+<template name="outputTab">
+    <p>Outputs</p>
+</template>
+
+<template name="runTab">
+    <p>Run Control</p>
+</template>
+
+<template name="helpTab">
+    <p>About step</p>
+</template>
+

@@ -9,8 +9,6 @@ Template.listSteps.events({
         var projectId = this.model.projectId;
         var modelId = this.model._id;
 
-        console.log(projectId, modelId);
-
         // Go to the addStep route
         Router.go('addStep', {
             projectId: projectId,

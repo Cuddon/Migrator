@@ -1,5 +1,5 @@
 /*
- * 'step' publications
+ * 'stencil' publications
  */
 
 //TODO: Are there any stencil fields that should be hidden from the client?

@@ -1,0 +1,104 @@
+<template name="sh5rNGLnQGN23Qjhs">
+
+    {{!
+        Test 2 stencil
+    }}
+
+    <div class="stencil white-background light">
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s1"><a class="active" href="#input-tab">Input</a></li>
+                    <li class="tab col s1"><a href="#transform-tab">Transform</a></li>
+                    <li class="tab col s1 disabled"><a href="#output-tab">Output</a></li>
+                    <li class="tab col s1"><a href="#run-tab">Run</a></li>
+                    <li class="tab col s1"><a href="#help-tab">Help!</a></li>
+                </ul>
+            </div>
+
+            <!-- Inputs Tab -->
+            <div id="input-tab">
+
+                <div class="row">
+                    <form class="col s8 offset-s2">
+
+                        <!-- CSV file selector -->
+                        <div class="row">
+                            <div class="col s2">File Name</div>
+
+                            <div class="file-field input-field col s8">
+                                <div class="btn waves-effect">
+                                    <span>Select...</span>
+                                    <input type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input id="input-filename" class="file-path validate" type="text"
+                                           data-field="inputFilename"
+                                           placeholder="Select an input file">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Header row in CSV file -->
+                        <div class="row">
+                            <div class="col s8 offset-s2">
+                                <p>
+                                    <input type="checkbox" id="headerRow" class="filled-in"/>
+                                    <label for="headerRow">Header row</label>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Ignore rows -->
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input placeholder="Ignore row numbers (1,5, 3-10)" id="ignoreRows" type="text">
+                                <label for="ignoreRows">Ignore rows</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s8 offset-s2">
+                                <div class="input-field">
+                                    <input class="active validate" data-field="inputflag" type="text" id="input-flag"
+                                           value="{{name}}">
+                                    <label for="input-flag">Input something</label>
+                                </div>
+                            </div>
+                            <div class="col s2">
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+
+
+            <!-- Transform Panel -->
+            <div id="transform-tab">
+                <div class="row">
+                    <div class="col s8">
+                        transformTab
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Outputs Panel -->
+            <div id="output-tab">
+                outputTab
+            </div>
+            <div id="run-tab">
+                runTab
+            </div>
+
+            <div id="help-tab">
+                helpTab
+            </div>
+
+        </div>
+    </div>
+</template>
+
+

@@ -6,7 +6,7 @@
  */
 
 Meteor.methods({
-    
+
     addStep: function (step) {
 
         // Check if user is logged in
@@ -27,6 +27,7 @@ Meteor.methods({
             modelId: String,
             name: String,
             description: String,
+            stencilId: String,
             stepGroup: Number,
             order: Number,
             image: String
@@ -41,6 +42,10 @@ Meteor.methods({
         }
         if (!step.name) {
             throw new Meteor.Error('mandatory fields', "A model name is mandatory.");
+        }
+
+        if (!step.stencilId) {
+            throw new Meteor.Error('mandatory fields', "You must select a step stencil!");
         }
 
         // Add additional info

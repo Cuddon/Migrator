@@ -24,3 +24,5 @@ accounts-ui
 check
 momentjs:moment
 meteorhacks:aggregate
+reactive-var
+materialize:materialize

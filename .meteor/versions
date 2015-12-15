@@ -52,6 +52,7 @@ less@2.5.1
 livedata@1.0.15
 localstorage@1.0.5
 logging@1.0.8
+materialize:materialize@0.97.3
 meteor@1.1.10
 meteor-base@1.0.1
 meteor-developer@1.1.5
@@ -94,4 +95,4 @@ underscore@1.0.4
 url@1.0.5
 webapp@1.2.3
 webapp-hashing@1.0.5
-zodiase:mdl@1.0.6_1
+zodiase:mdl@1.0.6_2

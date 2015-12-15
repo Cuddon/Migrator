@@ -16,7 +16,6 @@ Router.route('/project/:projectId/model/:modelId/addStep/selectStencil', {
 
     data: function() {
         return {
-            //stencilCategories: StencilsCollection.aggregate([ { $group : { _id : "$categgory" } } ] ),
             stencils: StencilsCollection.find({}, {sort: {category: 1, name: 1}})
         };
     },

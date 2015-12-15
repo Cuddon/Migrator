@@ -19,7 +19,8 @@ Router.route('/project/:projectId/model/:modelId/step/:_id', {
             // All steps for the selected model
             Meteor.subscribe("projects"),
             Meteor.subscribe("models", projectId),
-            Meteor.subscribe("steps", modelId)
+            Meteor.subscribe("steps", modelId),
+            Meteor.subscribe("stencils")
         ];
     },
 
