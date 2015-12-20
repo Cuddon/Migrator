@@ -2,17 +2,17 @@
 
 <template name="viewStep">
 
-    <div class="container">
-        {{> instructionsRowMaterialize text1="View a step" }}
+    <div>
+        {{> instructionsRow text2="View a step" }}
 
-        <div class="row">
+        <div class="mdl-grid mdl-grid--no-spacing">
 
             <!-- Step name -->
-            <div class="col s2">
+            <div class="mdl-cell mdl-cell--2-col">
                 <div class="text bold">Step name</div>
             </div>
 
-            <div class="col s9">
+            <div class="mdl-cell mdl-cell--9-col">
                 {{#if step.name}}
                     <div class="text light">{{step.name}}</div>
                 {{else}}
@@ -20,30 +20,30 @@
                 {{/if}}
             </div>
 
-            <div class="col s1">
+            <div class="mdl-cell mdl-cell--1-col">
                 <!-- Take Action menu -->
                 <!-- Dropdown Trigger -->
-                <a class='dropdown-button btn-flat' href='#' data-activates='take-action-dropdown'><i
-                        class="material-icons grey-on-hover">more_vert</i></a>
+                <button id="take-action-dropdown"
+                        class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">more_vert</i>
+                </button>
 
-                <!-- Dropdown Structure -->
-                <ul id='take-action-dropdown' class='dropdown-content'>
-                    <li class="edit-button"><a href="#"><i class="material-icons">edit</i> Edit step details</a></li>
-                    <li class="disabled"><a href="#"><i class="material-icons">info</i> Info</a></li>
-                    <li><a href="#"><i class="material-icons">content_copy</i> Clone</a></li>
-                    <li><a href="#"><i class="material-icons">share</i> Share</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#"><i class="material-icons">delete</i> Delete step</a></li>
+                <!-- Dropdown Content -->
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="take-action-dropdown">
+                    <li class="mdl-menu__item"><i class="material-icons">edit</i> Edit step details</li>
+                    <li class="mdl-menu__item"><i class="material-icons">info</i> Info</li>
+                    <li disabled class="mdl-menu__item"><i class="material-icons">content_copy</i> Clone</li>
+                    <li class="mdl-menu__item"><i class="material-icons">share</i> Share</li>
+                    <li class="mdl-menu__item"><i class="material-icons">delete</i> Delete step</li>
                 </ul>
             </div>
 
-            <!-- Next Row -->
             <!-- Step Description -->
-            <div class="col s2">
+            <div class="mdl-cell mdl-cell--2-col">
                 <div class="text bold">Description</div>
             </div>
 
-            <div class="col s10">
+            <div class="mdl-cell mdl-cell--10-col">
                 {{#if step.description}}
                     <div class="text light">{{step.description}}</div>
                 {{else}}
@@ -52,11 +52,11 @@
             </div>
 
             <!-- Stencil name -->
-            <div class="col s2">
+            <div class="mdl-cell mdl-cell--2-col">
                 <div class="text bold">Stencil</div>
             </div>
 
-            <div class="col s10">
+            <div class="mdl-cell mdl-cell--10-col">
                 {{#if step.stencilId}}
                     {{#with step.stencilId}}
                         <div class="text light">{{stencilprop this "name"}}</div>
@@ -68,14 +68,14 @@
         </div>
 
 
-        <div class="row">
+        <div class="mdl-grid mdl-grid--no-spacing">
 
             <!-- Model name -->
-            <div class="col s2">
+            <div class="mdl-cell mdl-cell--2-col">
                 <div class="text bold">Model</div>
             </div>
 
-            <div class="col s10">
+            <div class="mdl-cell mdl-cell--10-col">
                 {{#if model.name}}
                     <div class="text light">{{model.name}}</div>
                 {{else}}
@@ -84,11 +84,11 @@
             </div>
 
             <!-- Project name -->
-            <div class="col s2">
-                <div  class="text bold">Project</div>
+            <div class="mdl-cell mdl-cell--2-col">
+                <div class="text bold">Project</div>
             </div>
 
-            <div class="col s10">
+            <div class="mdl-cell mdl-cell--10-col">
                 {{#if project.name}}
                     <div class="text light">{{project.name}}</div>
                 {{else}}
@@ -100,13 +100,14 @@
 
 
         <!-- Notes -->
-        <div class="row">
+        <div class="mdl-grid mdl-grid--no-spacing">
             {{#if showNotes}}
-                <div class="col s2">
-                    <div class="text bold">Notes<i class="toggle-notes-button material-icons icon-hover">expand_more</i></div>
+                <div class="mdl-cell mdl-cell--2-col">
+                    <div class="text bold">Notes<i class="toggle-notes-button material-icons icon-hover">expand_more</i>
+                    </div>
                 </div>
 
-                <div class="col s10">
+                <div class="mdl-cell mdl-cell--10-col">
                     <form action="#">
                         <div class="input-field white-background">
                             <textarea class="materialize-textarea" id="notes">{{step.notes}}</textarea>
@@ -125,25 +126,20 @@
         </div>
 
 
-        <!-- Step details -->
-        {{#with step }}
-            {{#if stencilId }}
-                {{> Template.dynamic template=stencilId}}
-            {{else}}
-                <p>Step is missing a nominated stencil template</p>
-            {{/if}}
-        {{/with}}
+        <form action="#">
 
+            {{> stepDetails}}
 
-        <!-- Action Buttons row -->
-        <div class="row">
-            <div class="col s12">
-                <button type="submit" class="save-button btn">
-                    Save
-                </button>
+            <!-- Action Buttons  -->
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <button class="save-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        save
+                    </button>
+                </div>
             </div>
-        </div>
 
+        </form>
     </div>
 
 </template>

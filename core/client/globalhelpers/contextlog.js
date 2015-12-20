@@ -1,7 +1,10 @@
-Template.registerHelper('log', function () {
+Template.registerHelper('console', function () {
     /*
-     {{log}}
+     {{console}}
      */
+    console.log("*********");
+    console.log("Console output from template: "+ Template.instance().view.name + ": ");
     console.log(this);
+    console.log("*********");
     return null;
 });

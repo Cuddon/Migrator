@@ -3,7 +3,6 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.1.8/web.browser/accounts_ui.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/materialize_materialize/0.97.3/web.browser/dist/css/materialize.css" />
         <item url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.1.8/web.browser/login_buttons_dropdown.js" />
         <item url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.1.8/web.browser/login_buttons.js" />
         <item url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.1.8/web.browser/login_buttons_dialogs.js" />
@@ -178,12 +177,10 @@
         <item url="file://$USER_HOME$/.meteor/packages/accounts-meteor-developer/1.0.6/web.browser/meteor-developer-login-button.css" />
         <item url="file://$USER_HOME$/.meteor/packages/localstorage/1.0.5/web.browser/localstorage.js" />
         <item url="file://$USER_HOME$/.meteor/packages/logging/1.0.8/web.browser/logging.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/materialize_materialize/0.97.3/web.browser/dist/js/materialize.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.1.8/web.browser/accounts_ui.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/materialize_materialize/0.97.3/web.browser/dist/css/materialize.css" />
       <root url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.1.8/web.browser/login_buttons_dropdown.js" />
       <root url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.1.8/web.browser/login_buttons.js" />
       <root url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.1.8/web.browser/login_buttons_dialogs.js" />
@@ -358,7 +355,6 @@
       <root url="file://$USER_HOME$/.meteor/packages/accounts-meteor-developer/1.0.6/web.browser/meteor-developer-login-button.css" />
       <root url="file://$USER_HOME$/.meteor/packages/localstorage/1.0.5/web.browser/localstorage.js" />
       <root url="file://$USER_HOME$/.meteor/packages/logging/1.0.8/web.browser/logging.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/materialize_materialize/0.97.3/web.browser/dist/js/materialize.js" />
     </CLASSES>
     <SOURCES />
   </library>

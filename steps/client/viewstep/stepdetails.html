@@ -1,54 +1,117 @@
 <template name="stepDetails">
 
-    <div class="stepDetails">
-        <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-            <div class="mdl-tabs__tab-bar">
-                <a href="#input-panel" class="mdl-tabs__tab is-active">Input</a>
-                <a href="#transform-panel" class="mdl-tabs__tab">Transform</a>
-                <a href="#output-panel" class="mdl-tabs__tab">Output</a>
-                <a href="#run-panel" class="mdl-tabs__tab">Run</a>
-                <a href="#help-panel" class="mdl-tabs__tab">Help</a>
-            </div>
+    {{!
+        Test 2 stencil step details
+    }}
 
-            <div class="mdl-tabs__panel is-active" id="input-panel">
-                {{> stepInputPanel}}
-            </div>
+    <div class="white-background">
+        <h4>Step Details</h4>
 
-            <div class="mdl-tabs__panel" id="transform-panel">
-                {{> stepTransformPanel}}
-            </div>
-            <div class="mdl-tabs__panel" id="output-panel">
-                {{> stepOutputPanel}}
-            </div>
-            <div class="mdl-tabs__panel" id="run-panel">
-                {{> stepRunPanel}}
-            </div>
+        {{#if step.stencilId}}
+        {{!-- A stencil exists so contonue on --}}
+        {{!--
+            #each does cannot iterate objects so convert to an array of objects first using underscore
+        --}}
 
-            <div class="mdl-tabs__panel" id="help-panel">
-                {{> stepHelpPanel}}
+            <!-- Iterate through the tabs defined for this stencil -->
+            {{#each tab in tabsList}}
+                <!-- Tab name (first element of the list)-->
+                <div>Tab: {{tab.[0]}}</div>
+                {{#each field in tab.[1]}}
+                    <!-- Iterate through the fields in this tab -->
+
+                    {{#if _.isEqual field.type "h2"}}
+                        {{> header2 data=field.value}}
+                    {{/if}}
+
+                    {{#if _.isEqual field.type "text"}}
+                        {{> textfield field=field step=step}}
+                    {{/if}}
+
+                    {{#if _.isEqual field.type "checkbox"}}
+                        {{> checkbox field=field step=step}}
+                    {{/if}}
+
+                    {{#if _.isEqual field.type "file"}}
+                        {{> fileselect field=field step=step}}
+                    {{/if}}
+
+                {{else}}
+                    <p>Error: No fields defined in tab '{{tab.[0]}}' for stencil '{{stencilId}}'</p>
+                {{/each}}
+            {{else}}
+                <p>Error: No tabs defined for stencil '{{stencilId}}'</p>
+            {{/each}}
+        {{/if}}
+        <h4>end</h4>
+
+
+    </div>
+</template>
+
+<template name="header2">
+    <h2>{{data}}</h2>
+</template>
+
+
+<template name="textfield">
+
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--2-col">{{field.label}}</div>
+<!-- mdl-textfield- -full-width -->
+        <div class="mdl-cell mdl-cell--10-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                <input type="text"
+                       id="{{field.id}}"
+                       class="mdl-textfield__input"
+                       data-field="{{field.fieldName}}"
+                       pattern="{{field.validation.pattern}}"
+                       value="{{getValue step.details field.fieldName}}"
+                       {{mandatory}}>
+                <label class="mdl-textfield__label" for="{{field.id}}">{{field.label}}</label>
+                <span class="mdl-textfield__error">{{field.validation.message}}</span>
             </div>
         </div>
     </div>
 </template>
 
 
-<template name="stepInputPanel">
-    <p>Inputs</p>
+<template name="checkbox">
+
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--2-col">{{field.label}}</div>
+
+        <div class="mdl-cell mdl-cell--10-col">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="{{field.id}}">
+                <input type="checkbox"
+                       id="{{field.id}}"
+                       class="mdl-checkbox__input"
+                       data-field="{{field.fieldName}}"
+                       {{checked}}>
+                <span class="mdl-checkbox__label">{{field.label}}</span>
+            </label>
+
+        </div>
+    </div>
+
 </template>
 
-<template name="stepTransformPanel">
-    <p>Transform</p>
-</template>
 
-<template name="stepOutputPanel">
-    <p>Outputs</p>
-</template>
+<template name="fileselect">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--2-col">{{field.label}}</div>
 
-<template name="stepRunPanel">
-    <p>Run Control</p>
-</template>
+        <div class="mdl-cell mdl-cell--10-col">
+            <!-- Select file button -->
+            <i class="material-icons">{{field.icon}}</i>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input"
+                       type="file"
+                       id="{{field.id}}"
+                       data-field="{{field.fieldName}}"
+                       {{mandatory}}>
+            </div>
+        </div>
+    </div>
 
-<template name="stepHelpPanel">
-    <p>About step</p>
 </template>
-
