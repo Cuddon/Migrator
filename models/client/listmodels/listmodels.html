@@ -4,15 +4,12 @@
 
 <template name="listModels">
 
-    {{> sectionHeadingRow text2="Models"}}
-    {{> instructionsRow text2="Click/tap an existing model or add a new one with the + button"}}
+    {{> sectionHeadingRow text="Models"}}
+    {{> instructionsRow text="Click/tap an existing model or add a new one with the + button"}}
 
-    <!-- Content Row: List a project's models -->
+    <!-- Content Row: List of models for a project -->
     <div class="mdl-grid mdl-grid--no-spacing">
-        <div class="mdl-cell mdl-cell--2-col">
-        </div>
-
-        <div class="mdl-cell mdl-cell--8-col">
+        <div class="mdl-cell mdl-cell--11-col">
             <div class="mdl-grid">
                 {{#each modelsList}}
                     {{> modelItem}}
@@ -22,9 +19,7 @@
             </div>
         </div>
 
-        <div class="mdl-cell mdl-cell--2-col">
-            <div class="centre-block-horizontally" style="width: 56px;">
-            </div>
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-phone">
         </div>
     </div>
 

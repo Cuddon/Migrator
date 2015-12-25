@@ -1,0 +1,21 @@
+<template name="checkbox">
+
+    <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--2-col"></div>
+
+        <div class="mdl-cell mdl-cell--{{field.columnWidth}}-col">
+            <div class="checkbox-tweak-wrapper">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="{{field.id}}">
+                    <input type="checkbox"
+                           id="{{field.id}}"
+                           class="mdl-checkbox__input checkbox-tweak"
+                           data-field="{{field.fieldName}}"
+                        {{isChecked}}>
+                    <span class="mdl-checkbox__label">{{field.label}}</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+</template>
+

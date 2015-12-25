@@ -1,13 +1,14 @@
 <template name="header">
 
-    <header class="mdl-layout__header default-primary-color primary-text-color">
+    <header class="mdl-layout__header mdl-layout__header--waterfall default-primary-color primary-text-color">
 
         <!-- Menu button to open the drawer -->
-        <div class="mdl-layout-icon"></div>
+        <!-- div class="mdl-layout-icon"></div -->
 
-        <!-- Top row, always visible -->
+        <!-- Top header row, always visible -->
         <div class="mdl-layout__header-row">
-            <!-- Title -->
+
+            <!-- Title block, this can contain an img -->
             <button class="home-button mdl-button mdl-js-button mdl-js-ripple-effect">
                 <span class="mdl-layout-title mdl-color-text--primary-contrast">{{appName}}</span>
             </button>
@@ -15,11 +16,28 @@
             <!-- Align nav links and icons to the right -->
             <div class="mdl-layout-spacer"></div>
 
+            <!-- Navigation Block -->
+                    <nav class="mdl-navigation">
+                        <!-- Standard Nav Item -->
+                        <a class="mdl-navigation__link" href="#" data-route="projects">PROJECT LIST</a>
+                        <a class="mdl-navigation__link" href="#" data-route="project" {{isDisabled "project"}}>PROJECT</a>
+                        <a class="mdl-navigation__link" href="#" data-route="model" {{isDisabled "model"}}>MODEL</a>
+                        <a class="mdl-navigation__link" href="#" data-route="step" {{isDisabled "step"}}>STEP</a>
+                    </nav>
+
+            <!-- Align nav links and icons to the right -->
+            <div class="mdl-layout-spacer"></div>
+
             {{#if currentUser}}
-                <!-- Project -->
-                <button class="projects-button mdl-button mdl-js-button mdl-button--icon">
-                    <i class="material-icons">domain</i>
-                </button>
+
+                <!-- Search -->
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+                    <label class="mdl-button mdl-js-button mdl-button--icon" for="search"><i class="material-icons">search</i></label>
+                    <div class="mdl-textfield__expandable-holder">
+                        <input class="mdl-textfield__input" type="text" id="search" />
+                    </div>
+                </div>
+
             {{/if}}
 
             <!-- Profile -->
@@ -94,16 +112,5 @@
 
 </template>
 
-<template name="headerRow2">
 
-    {{#unless isCurrentRoute "home"}}
-        <!-- Show only if not on the home page. Back button (Keep inside a span for the header row) -->
-        <span class="headerRow2">
-            <button class="back-button mdl-button mdl-js-button mdl-button--icon">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            <span class="activity">{{activity}}</span>
-        </span>
-    {{/unless}}
 
-</template>

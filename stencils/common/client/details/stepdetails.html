@@ -1,0 +1,95 @@
+<template name="stepDetails">
+
+    <!--
+        Step details. Form is built dynamically
+    -->
+
+    <div class="step-details">
+
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col">
+            </div>
+
+            <div class="mdl-cell mdl-cell--8-col white-background">
+
+                <div class="mdl-card mdl-shadow--2dp" style="width: 100%">
+
+
+                    {{#if step.stencilId}}
+                        <!-- A stencil exists so continue on -->
+
+                        <!-- Generate the Tabs menu -->
+                        <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+
+                            <!-- Tab bar -->
+                            <div class="mdl-tabs__tab-bar">
+                                {{#each tab in tabsList}}
+                                    <a class="mdl-tabs__tab" href="#{{tab.[0]}}-tab">{{capitaliseFirstChar tab.[0]}}</a>
+                                {{/each}}
+                            </div>
+
+                            <!-- Tab content -->
+                            <!-- Dynamically generate the fields from the stencil definition -->
+                            <!-- Iterate through the tabs defined for this stencil -->
+                            {{#each tab in tabsList}}
+                                <!-- Notes #each does cannot iterate objects so tabsList is array of key/value pairs -->
+
+                                <!-- Tab name (first element of the list)-->
+                                <div id="{{tab.[0]}}-tab" class="mdl-tabs__panel {{isActive @index}}">
+
+                                    {{#each field in tab.[1]}}
+                                        <!-- Iterate through the fields in this tab -->
+
+                                        {{#if _.isEqual field.type "section-heading"}}
+                                            {{> heading value=field.value level=field.level}}
+                                        {{/if}}
+
+                                        {{#if _.isEqual field.type "vertical-spacer"}}
+                                            {{> verticalSpacer}}
+                                        {{/if}}
+
+                                        {{#if _.isEqual field.type "text-field"}}
+                                            {{> textfield field=field step=step}}
+                                        {{/if}}
+
+                                        {{#if _.isEqual field.type "text-field-value"}}
+                                            {{> textfieldvalue field=field step=step}}
+                                        {{/if}}
+
+                                        {{#if _.isEqual field.type "checkbox"}}
+                                            {{> checkbox field=field step=step}}
+                                        {{/if}}
+
+                                        {{#if _.isEqual field.type "file-select-field"}}
+                                            {{> fileSelectField field=field step=step}}
+                                        {{/if}}
+
+                                        {{#if _.isEqual field.type "stencil-value"}}
+                                            {{> stencilvalue label=field.label value=field.value}}
+                                        {{/if}}
+                                    {{else}}
+                                        <p>Error: No fields defined in tab '{{tab.[0]}}' for stencil '{{stencilId}}'</p>
+                                    {{/each}}
+                                </div> <!-- end of tab definition -->
+                            {{else}}
+                                <p>Error: No tabs defined for stencil '{{stencilId}}'</p>
+                            {{/each}}
+                        </div> <!-- end of tabs definition -->
+                    {{else}}
+                        <p>Error: No stencil selected for step: {{step._id}}</p>
+                    {{/if}}
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--2-col">
+        </div>
+    </div>
+</template>
+
+
+
+
+

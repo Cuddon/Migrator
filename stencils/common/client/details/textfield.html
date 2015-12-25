@@ -1,0 +1,30 @@
+
+<template name="textfield">
+
+    <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--2-col"></div>
+
+        <!-- mdl-textfield- -full-width -->
+        <div class="mdl-cell mdl-cell--{{field.columnWidth}}-col">
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label {{isFullWidth}}">
+                <input type="text"
+                       id="{{field.id}}"
+                       class="mdl-textfield__input"
+                       data-field="{{field.fieldName}}"
+                       pattern="{{field.validation.pattern}}"
+                       value="{{getFieldValue field.fieldName}}"
+                    {{isMandatory}}>
+
+                <label class="mdl-textfield__label" for="{{field.id}}">{{field.label}}</label>
+
+                <!-- Validation error message -->
+                <span class="mdl-textfield__error">{{field.validation.message}}</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</template>
+

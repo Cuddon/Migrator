@@ -2,144 +2,173 @@
 
 <template name="viewStep">
 
-    <div>
-        {{> instructionsRow text2="View a step" }}
+    <div class="template-wrapper">
+        {{> instructionsRow text2="View, edit, or run a step" }}
 
-        <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="section-colored-background" style="background-color: #f3f3f3">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col"></div>
 
-            <!-- Step name -->
-            <div class="mdl-cell mdl-cell--2-col">
-                <div class="text bold">Step name</div>
-            </div>
+            <div class="mdl-cell mdl-cell--8-col">
 
-            <div class="mdl-cell mdl-cell--9-col">
-                {{#if step.name}}
-                    <div class="text light">{{step.name}}</div>
-                {{else}}
-                    &nbsp;
-                {{/if}}
-            </div>
+                <!-- Step name -->
+                <div class="mdl-grid mdl-grid--no-spacing">
 
-            <div class="mdl-cell mdl-cell--1-col">
-                <!-- Take Action menu -->
-                <!-- Dropdown Trigger -->
-                <button id="take-action-dropdown"
-                        class="mdl-button mdl-js-button mdl-button--icon">
-                    <i class="material-icons">more_vert</i>
-                </button>
+                    <div class="mdl-cell mdl-cell--5-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                            <input type="text"
+                                   id="name"
+                                   class="mdl-textfield__input"
+                                   pattern="^.{1,50}$" required aria-required="true"
+                                   value="{{step.name}}">
+                            <label class="mdl-textfield__label" for="name">Step name</label>
 
-                <!-- Dropdown Content -->
-                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="take-action-dropdown">
-                    <li class="mdl-menu__item"><i class="material-icons">edit</i> Edit step details</li>
-                    <li class="mdl-menu__item"><i class="material-icons">info</i> Info</li>
-                    <li disabled class="mdl-menu__item"><i class="material-icons">content_copy</i> Clone</li>
-                    <li class="mdl-menu__item"><i class="material-icons">share</i> Share</li>
-                    <li class="mdl-menu__item"><i class="material-icons">delete</i> Delete step</li>
-                </ul>
-            </div>
+                            <!-- Validation error message -->
+                            <span class="mdl-textfield__error">Must be between 1 and 50 characters</span>
 
-            <!-- Step Description -->
-            <div class="mdl-cell mdl-cell--2-col">
-                <div class="text bold">Description</div>
-            </div>
+                        </div>
+                    </div>
 
-            <div class="mdl-cell mdl-cell--10-col">
-                {{#if step.description}}
-                    <div class="text light">{{step.description}}</div>
-                {{else}}
-                    &nbsp;
-                {{/if}}
-            </div>
+                    <div class="mdl-cell mdl-cell--1-col"></div>
 
-            <!-- Stencil name -->
-            <div class="mdl-cell mdl-cell--2-col">
-                <div class="text bold">Stencil</div>
-            </div>
+                    <div class="mdl-cell mdl-cell--5-col">
+                        {{#if step.stencilId}}
+                            {{#with step.stencilId}}
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input type="text"
+                                           id="stencil"
+                                           class="mdl-textfield__input"
+                                           value="{{stencilprop this "name"}} ({{stencilprop this "version"}})"
+                                           disabled>
+                                    <label class="mdl-textfield__label" for="stencil">Stencil</label>
+                                </div>
+                            {{/with}}
+                        {{else}}
+                            &nbsp;
+                        {{/if}}
+                    </div>
 
-            <div class="mdl-cell mdl-cell--10-col">
-                {{#if step.stencilId}}
-                    {{#with step.stencilId}}
-                        <div class="text light">{{stencilprop this "name"}}</div>
-                    {{/with}}
-                {{else}}
-                    &nbsp;
-                {{/if}}
-            </div>
-        </div>
+                    <div class="mdl-cell mdl-cell--1-col">
+                        <!-- Take Action menu -->
+                        <!-- Dropdown Trigger -->
+                        <button id="take-action-dropdown"
+                                class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">more_vert</i>
+                        </button>
 
-
-        <div class="mdl-grid mdl-grid--no-spacing">
-
-            <!-- Model name -->
-            <div class="mdl-cell mdl-cell--2-col">
-                <div class="text bold">Model</div>
-            </div>
-
-            <div class="mdl-cell mdl-cell--10-col">
-                {{#if model.name}}
-                    <div class="text light">{{model.name}}</div>
-                {{else}}
-                    &nbsp;
-                {{/if}}
-            </div>
-
-            <!-- Project name -->
-            <div class="mdl-cell mdl-cell--2-col">
-                <div class="text bold">Project</div>
-            </div>
-
-            <div class="mdl-cell mdl-cell--10-col">
-                {{#if project.name}}
-                    <div class="text light">{{project.name}}</div>
-                {{else}}
-                    &nbsp;
-                {{/if}}
-            </div>
-
-        </div>
-
-
-        <!-- Notes -->
-        <div class="mdl-grid mdl-grid--no-spacing">
-            {{#if showNotes}}
-                <div class="mdl-cell mdl-cell--2-col">
-                    <div class="text bold">Notes<i class="toggle-notes-button material-icons icon-hover">expand_more</i>
+                        <!-- Dropdown Content -->
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                            for="take-action-dropdown">
+                            <li class="mdl-menu__item"><i class="material-icons">edit</i> Edit step details</li>
+                            <li class="mdl-menu__item"><i class="material-icons">info</i> Info</li>
+                            <li disabled class="mdl-menu__item"><i class="material-icons">content_copy</i> Clone
+                            </li>
+                            <li class="mdl-menu__item"><i class="material-icons">share</i> Share</li>
+                            <li class="mdl-menu__item"><i class="material-icons">delete</i> Delete step</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="mdl-cell mdl-cell--10-col">
-                    <form action="#">
-                        <div class="input-field white-background">
-                            <textarea class="materialize-textarea" id="notes">{{step.notes}}</textarea>
-                            <label for="notes">Type notes here (automatically saved)</label>
+                <!-- Step Description -->
+                <div class="mdl-grid mdl-grid--no-spacing">
+
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                            <input type="text"
+                                   id="description"
+                                   class="mdl-textfield__input"
+                                   pattern="^.{0,100}$"
+                                   value="{{step.description}}">
+
+                            <label class="mdl-textfield__label" for="description">Description</label>
+
+                            <!-- Validation error message -->
+                            <span class="mdl-textfield__error">Must be less than 50 characters</span>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            {{else}}
-                <div class="col s2">
-                    <div>Notes<i class="toggle-notes-button material-icons icon-hover">expand_more</i></div>
+
+
+                <!-- Notes -->
+                <div class="mdl-grid mdl-grid--no-spacing">
+
+                    {{#if showNotes}}
+                        <div class="mdl-cell mdl-cell--2-col">
+                            <span class="body-text">Notes</span>
+                            <label class="toggle-notes-button mdl-button mdl-js-button mdl-button--icon"
+                                   for="null">
+                                <i class="material-icons">keyboard_arrow_right</i>
+                            </label>
+                        </div>
+
+                        <div class="mdl-cell mdl-cell--10-col">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
+                            <textarea class="mdl-textfield__input"
+                                      type="text"
+                                      rows="5"
+                                      id="notes">{{step.notes}}</textarea>
+                                <label class="mdl-textfield__label" for="notes">Type notes here (automatically
+                                    saved)</label>
+                            </div>
+                        </div>
+
+                    {{else}}
+                        <div class="mdl-cell mdl-cell--2-col">
+                            <span class="body-text">Notes</span>
+                            <label class="toggle-notes-button mdl-button mdl-js-button mdl-button--icon"
+                                   for="null">
+                                <i class="material-icons">expand_more</i>
+                            </label>
+                        </div>
+                        <div class="mdl-cell mdl-cell--10-col"></div>
+                    {{/if}}
                 </div>
-                <div class="col s10">
-                    <div class="field-value">&nbsp;</div>
+
+
+                <!-- Project and model -->
+                <div class="mdl-grid mdl-grid--no-spacing">
+
+                    <!-- Model name -->
+                    <div class="mdl-cell mdl-cell--2-col">
+                        <div class="body-text bold">Model</div>
+                    </div>
+
+                    <div class="mdl-cell mdl-cell--10-col">
+                        <div class="body-text">{{model.name}}</div>
+                    </div>
+
+                    <!-- Project name -->
+                    <div class="mdl-cell mdl-cell--2-col">
+                        <div class="body-text bold">Project</div>
+                    </div>
+
+                    <div class="mdl-cell mdl-cell--10-col">
+                        <div class="body-text">{{project.name}}</div>
+                    </div>
+
                 </div>
-            {{/if}}
+
+
+            </div>
+            <div class="mdl-cell mdl-cell--2-col"></div>
         </div>
 
+        </div>
+        {{> stepDetails}}
 
-        <form action="#">
 
-            {{> stepDetails}}
 
-            <!-- Action Buttons  -->
-            <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--12-col">
+        <!-- Action Buttons  -->
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col">
+                <form action="#">
                     <button class="save-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                         save
                     </button>
-                </div>
+                </form>
             </div>
+        </div>
 
-        </form>
-    </div>
+    </div>   <!-- end of template wrapper -->
 
 </template>

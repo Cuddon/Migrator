@@ -33,10 +33,12 @@ Router.route('/project/:_id', {
         if (Meteor.userId()) {
             this.render('viewProject', {to: 'content'});
             Session.set('activity', "View a Project");
+            Session.set('project', this.params._id);
         } else {
             alert("You must be logged in to view a project");
             this.render('Home', {to: 'content'});
             Session.set('activity', "Home");
+            Session.set('project', null);
         }
     }
 });

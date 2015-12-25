@@ -3,7 +3,7 @@
  */
 
 // View a Model
-// Router.go('model', {projectId: projectId, modelId: modelId, _id: stepId});
+// Router.go('model', {projectId: projectId, _id: modelId});
 
 Router.route('/project/:projectId/model/:_id', {
     name: 'model',
@@ -43,10 +43,12 @@ Router.route('/project/:projectId/model/:_id', {
         if (Meteor.userId()) {
             this.render('viewModel', {to: 'content'});
             Session.set('activity', "View model");
+            Session.set('model', this.params._id);
         } else {
             alert("You must be logged in to view a model");
             this.render('Home', {to: 'content'});
             Session.set('activity', "Home");
+            Session.set('model', null);
         }
     }
 });

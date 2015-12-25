@@ -4,24 +4,31 @@
     <div>
 
         <!-- Material Design Lite layout wrapper -->
-        <div class="mdl-layout mdl-js-layout background-paper-color">
+        <div class="mdl-layout mdl-js-layout mdl-layout--overlay-drawer-button default-paper-color">
 
-                <!-- Header -->
-                {{> header}}
+            <!-- Header -->
+            {{> header}}
 
-                <main class="mdl-layout__content">
-                    <!-- Error messages - dismissible -->
-                    <div>{{> errors}}</div>
+            <main class="mdl-layout__content">
+                <!-- Error messages - dismissible -->
+                <div>{{> errors}}</div>
 
-                    <!-- Variable content container -->
-                    <div>
-                        {{> yield "content"}}
+                <div>
+                    <div class="mdl-grid mdl-grid--no-spacing">
+                        <div class="mdl-cell mdl-cell--2-col">
+                            {{> sideNav}}
+                        </div>
+                        <div class="mdl-cell mdl-cell--10-col">
+                            <!-- Variable content container -->
+                            {{> yield "content"}}
+                        </div>
                     </div>
-                </main>
+                </div>
+            </main>
 
-                <!-- Footer -->
-                {{> footer}}
-            </div>
+            <!-- Footer -->
+            {{> footer}}
+        </div>
     </div>
 
 </template>

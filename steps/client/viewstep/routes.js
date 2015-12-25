@@ -44,10 +44,12 @@ Router.route('/project/:projectId/model/:modelId/step/:_id', {
         if (Meteor.userId()) {
             this.render('viewStep', {to: 'content'});
             Session.set('activity', "View step");
+            Session.set('step', this.params._id);
         } else {
             alert("You must be logged in to view a step");
             this.render('Home', {to: 'content'});
             Session.set('activity', "Home");
+            Session.set('step', null);
         }
     }
 });

@@ -1,0 +1,30 @@
+<template name="fileSelectField">
+
+    <div class="mdl-grid mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--2-col">
+        </div>
+
+        <div class="mdl-cell mdl-cell--{{field.columnWidth}}-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label {{isFullWidth}}">
+                <input class="mdl-textfield__input "
+                       type="text"
+                       id="{{field.id}}"
+                       data-field="{{field.fieldName}}"
+                       value="{{getFieldValue field.fieldName}}"
+                    {{isMandatory}}>
+                <label class="mdl-textfield__label" for="{{field.id}}">{{field.label}}</label>
+
+                <!-- Validation error message -->
+                <span class="mdl-textfield__error">{{field.validation.message}}</span>
+            </div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--2-col">
+            <button id="select-file-button" class="mdl-button mdl-js-button mdl-js-ripple-effect">Select...</button>
+
+            <!-- hide this input but trigger it's file dialog when the above button is clicked -->
+            <input type="file" id="getFileDialog" style="opacity:0">
+        </div>
+    </div>
+
+</template>

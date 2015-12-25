@@ -1,0 +1,33 @@
+<template name="sideNav">
+
+    <div class="secondary-text-color sideNavArea">
+
+        <!-- Top row -->
+        <div class="mdl-grid" >
+            <div class="mdl-cell mdl-cell--12-col instructions">&nbsp;</div>
+        </div>
+
+        <!-- 2nd row -->
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col">
+                {{#with isMenuEnabled}}
+                    {{#if projects}}
+                        <a class="mdl-navigation__link" href="{{ pathFor 'projects' }}">Home (Projects List)</a>
+                    {{/if}}
+                {{/with}}
+
+                {{#if project}}
+                    <p>Project: {{project.name}}</p>
+                {{/if}}
+
+                {{#if model}}
+                    <p> Model: {{model.name}}</p>
+                {{/if}}
+
+                {{#if step}}
+                    <p> Step: {{step.name}}</p>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</template>

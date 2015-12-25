@@ -1,11 +1,11 @@
 
-span.headerRow2 {
-    margin-left:20px;
-    margin-bottom:16px;
+.mdl-layout__header-row > .back-button {
+    margin-left: -60px;
 }
 
-span.headerRow2 > .activity{
-    margin-left:32px;
+
+.mdl-layout__header-row > .activity{
+    padding-left: 44px;
 }
 
 

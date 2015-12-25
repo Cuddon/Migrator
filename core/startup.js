@@ -10,6 +10,11 @@ Meteor.startup(function () {
 
         Session.setDefault('activity', "Home");
         Session.setDefault('showNotes', false);
+
+        Session.setDefault('project', null);
+        Session.setDefault('model', null);
+        Session.setDefault('step', null);
+
     }
 
 

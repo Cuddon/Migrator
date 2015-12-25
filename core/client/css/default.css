@@ -2,22 +2,55 @@
 
 body {
     font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
+    font-size: 100%;
 }
+
+.body-text {
+    font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
+    font-size: 1.14286em;  /* Gives 16px font size */
+    font-weight: 400;
+}
+
+/* Fixed Fast Action Button. Overrides MDL theme. */
+.mdl-button--fab.FAB-bottom-right {
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 0;
+    margin-right: calc((100% / 144 * 10 / 2) - 24px);;
+    margin-bottom: 32px;
+    z-index: 9999;
+}
+
+.instructions {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 1.25rem;
+    font-weight: 400;
+/*    margin-top: 20px;
+    margin-bottom: 12px; */
+}
+
+.mdl-card__title-text.primary-text-color-light, .mdl-card__menu.primary-text-color-light {
+    color: #ffffff;
+}
+
+
 
 .mdl-grid {
-    border-color: #f5201d;
+    border-color: #2e3032;
     border-style: solid;
     border-width: thin;
 }
 
-/* Grey 100 */
 .mdl-grid > .mdl-cell{
-    border-color: #f5a02b;
+    border-color: #212121;
     border-style: solid;
     border-width: thin;
 }
 
 
+
+/* Not sure if these are used */
 
 .text-centre-vertically, .text-center-vertically {
     margin-top: auto;
@@ -58,15 +91,8 @@ body {
     font-weight: 500;
 }
 
-.instructions {
-    font-family: 'Architects Daughter', cursive;
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-top: 24px;
-    margin-bottom: 12px;
-}
 
-.section_heading {
+.section-heading {
     font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
     font-size: 14pt;
     font-weight: 500;
@@ -75,12 +101,6 @@ body {
     display: block;
 }
 
-.body-text {
-    font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
-    font-size: 1.0rem;
-    font-weight: 300;
-    display: block;
-}
 
 .field-name {
     font-weight: 400;
@@ -114,16 +134,6 @@ body {
 }
 
 
-/* Add project Fast Action Button*/
-.FAB-bottom-right {
-    position: fixed;
-    display: block;
-    right: 0;
-    bottom: 0;
-    margin-right: 32px;
-    margin-bottom: 32px;
-    z-index: 9999;
-}
 
 
 .text {
