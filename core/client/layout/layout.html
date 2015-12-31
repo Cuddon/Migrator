@@ -13,16 +13,31 @@
                 <!-- Error messages - dismissible -->
                 <div>{{> errors}}</div>
 
-                <div>
-                    <div class="mdl-grid mdl-grid--no-spacing">
+
+                <div class="mdl-grid mdl-grid--no-spacing">
+
+                    <!-- Side Navigation -->
+                    {{#unless isCurrentRoute "home"}}
                         <div class="mdl-cell mdl-cell--2-col">
-                            {{> sideNav}}
+                            {{> projectNav}}
                         </div>
-                        <div class="mdl-cell mdl-cell--10-col">
+                    {{/unless}}
+
+                    <!-- Main Content -->
+                    {{#if isCurrentRoute "home"}}
+                        <div class="mdl-cell mdl-cell--12-col">
                             <!-- Variable content container -->
                             {{> yield "content"}}
                         </div>
-                    </div>
+                    {{else}}
+                        <div class="mdl-cell mdl-cell--8-col">
+                            <!-- Variable content container -->
+                            {{> yield "content"}}
+                        </div>
+                        <div class="mdl-cell mdl-cell--2-col">
+                            {{!-- RHS nav --}}
+                        </div>
+                    {{/if}}
                 </div>
             </main>
 

@@ -1,0 +1,56 @@
+/* Style a Select HTML control so it looks like MDLRemove focus */
+
+select {
+    font-family: inherit;
+    background-color: transparent;
+    padding: 4px 0 0 4px;   /* top right bottom left */
+    width: 100%;
+    font-size: 16px;
+    color: rgba(0, 0, 0, .26);
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.mdl-selectfield {
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-size: 16px;
+    position: relative;
+    padding: 16px 0 16px 0;   /* top right bottom left */
+}
+
+/* Remove focus */
+select:focus {
+    outline: none
+}
+
+/* Hide label */
+.mdl-selectfield label {
+    display: none;
+}
+
+/* Use custom arrow */
+.mdl-selectfield select {
+    /* Remove platform specific styling */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+
+.mdl-selectfield:after {
+    position: absolute;
+    top: 0.75em;
+    right: 0.5em;
+    /* Styling the down arrow */
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: .25em solid transparent;
+    border-right: .25em solid transparent;
+    border-top: .375em solid black;
+    pointer-events: none;
+}

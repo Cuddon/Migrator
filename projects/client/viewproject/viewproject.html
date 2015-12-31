@@ -3,12 +3,12 @@
 <template name="viewProject">
 
     {{> sectionHeadingRow text="Project"}}
-    {{> instructionsRow text="View a project or select/add a new model"}}
+    {{> instructionsRow text="Update a project's details or select/add a new model"}}
 
     <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--2-col field-name"></div>
+        <div class="mdl-cell mdl-cell--2-col"></div>
 
-        <div class="mdl-cell mdl-cell--6-col">
+        <div class="mdl-cell mdl-cell--8-col">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
                 <input type="text"
                        id="name"
@@ -24,7 +24,7 @@
                 <input type="text"
                        id="description"
                        class="mdl-textfield__input"
-                       pattern="^.{1,50}$" required aria-required="true"
+                       pattern="^.{1,50}$"
                        value="{{project.description}}">
                 <label class="mdl-textfield__label" for="description">Description</label>
 
@@ -89,7 +89,7 @@
             </ul>
         </div>
 
-        <div class="mdl-cell mdl-cell--3-col">
+        <div class="mdl-cell mdl-cell--1-col">
         </div>
     </div>
 

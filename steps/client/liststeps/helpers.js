@@ -7,7 +7,7 @@ Template.listSteps.helpers({
     stepsList: function (group) {
         /**
          *  Return the steps for the current stepGroup only
-         *  Sort them by order and reverse created date if order is the same
+         *  Sort them by order and creation date if order is the same (last added step goes at the bottom)
          */
 
         return StepsCollection.find({
@@ -16,7 +16,7 @@ Template.listSteps.helpers({
         }, {
             sort: {
                 order: 1,
-                createdAt: -1
+                createdAt: 1
             }
         });
     }

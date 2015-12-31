@@ -31,7 +31,12 @@ Template.addStep.events({
             return false;
         }
 
-        // Add the new step to the database using a server method
+        if (step.stepGroup === 0) {
+            // No Step Group allocated
+            step.stepGroup = NUMBER_NO_DATA_ENTERED;   // -3 = no data
+        }
+
+            // Add the new step to the database using a server method
         Meteor.call('addStep', step, function (error) {
             if (error) {
                 // Display the error to the client, and stay on the same page

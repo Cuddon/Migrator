@@ -16,7 +16,8 @@ Meteor.methods({
         if (!Meteor.userId()) {
             // User not logged in
             // Raise an error and send it to the client
-            throw new Meteor.Error("logged-out", "You must be logged in to delete a project.");
+            Router.go('home');
+            throw new Meteor.Error("logged-out", "You must be logged in");
         }
 
         // Check if the current user is the owner or has been shared the project

@@ -9,7 +9,7 @@
 
     <!-- Content Row: List of models for a project -->
     <div class="mdl-grid mdl-grid--no-spacing">
-        <div class="mdl-cell mdl-cell--11-col">
+        <div class="mdl-cell mdl-cell--12-col">
             <div class="mdl-grid">
                 {{#each modelsList}}
                     {{> modelItem}}
@@ -19,8 +19,6 @@
             </div>
         </div>
 
-        <div class="mdl-cell mdl-cell--1-col mdl-cell--hide-phone">
-        </div>
     </div>
 
     <!-- Add model floating button -->
@@ -47,7 +45,7 @@
         <div class="model-card mdl-card mdl-shadow--2dp">
             <div class="model-item mdl-card__title golden-ratio-landscape"
                  style="background: url('{{image}}') center / cover">
-                <h2 class="mdl-card__title-text golden-ratio-content">{{name}}</h2>
+                <h2 class="mdl-card__title-text golden-ratio-content primary-text-color-light">{{name}}</h2>
             </div>
             <div class="model-item mdl-card__supporting-text">
                 {{description}} [{{order}}]

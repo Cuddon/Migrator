@@ -1,15 +1,13 @@
 <template name="listSteps">
 
-    {{> sectionHeadingRow text2="Steps"}}
+    {{> sectionHeadingRow text="Steps"}}
+    {{> instructionsRow text="Click/tap an existing step or add a new one with the + button"}}
 
-    {{> instructionsRow text2="Click/tap an existing step or add a new one with the + button"}}
     <!-- Content Row: List the model's steps -->
     <div class="mdl-grid mdl-grid--no-spacing">
-        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-phone">
-        </div>
-
-        <div class="mdl-cell mdl-cell--8-col">
+        <div class="mdl-cell mdl-cell--12-col">
             {{#each group in model.stepGroups}}
+            {{!-- group is a zero based array --}}
                 <div class="mdl-grid mdl-grid--no-spacing">
                     <div class="mdl-cell mdl-cell--12-col">
                         <div class="section-heading">{{group}}</div>
@@ -24,9 +22,20 @@
                     {{/each}}
                 </div>
             {{/each}}
-        </div>
 
-        <div class="mdl-cell mdl-cell--2-col">
+            <!-- Steps with no group -->
+            {{#if stepsList "-3"}}
+                <div class="mdl-grid mdl-grid--no-spacing">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <div class="section-heading">No group</div>
+                    </div>
+                </div>
+                <div>
+                    {{#each stepsList -3}}
+                        {{> stepItem}}
+                    {{/each}}
+                </div>
+            {{/if}}
         </div>
     </div>
 

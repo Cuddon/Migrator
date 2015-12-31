@@ -30,8 +30,13 @@ body {
     margin-bottom: 12px; */
 }
 
+/* White text for Card title */
 .mdl-card__title-text.primary-text-color-light, .mdl-card__menu.primary-text-color-light {
     color: #ffffff;
+}
+
+.mdl-button.button-align-with-text {
+    top: 16px;
 }
 
 

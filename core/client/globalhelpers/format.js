@@ -12,3 +12,15 @@ Template.registerHelper('formatTime', function(context) {
     if(context)
         return moment(context).format('DD/MM/YYYY, hh:mm');
 });
+
+
+Template.registerHelper('capitaliseFirstChar', function (str) {
+
+    if (str) {
+        return capitaliseFirstChar(str);
+
+    } else {
+        return null;
+    }
+
+});

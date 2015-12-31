@@ -1,9 +1,9 @@
-<template name="sideNav">
+<template name="projectNav">
 
     <div class="secondary-text-color sideNavArea">
 
         <!-- Top row -->
-        <div class="mdl-grid" >
+        <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--12-col instructions">&nbsp;</div>
         </div>
 
@@ -17,17 +17,21 @@
                 {{/with}}
 
                 {{#if project}}
-                    <p>Project: {{project.name}}</p>
+                    <p>Project: </p>
+                    <a class="mdl-navigation__link" href="{{ pathFor 'project' _id=project._id }}">{{project.name}}</a>
                 {{/if}}
 
                 {{#if model}}
-                    <p> Model: {{model.name}}</p>
+                    <p> Model:</p>
+                    <a class="mdl-navigation__link" href="{{ pathFor 'model' projectId=model.projectId _id=model._id }}">{{model.name}}</a>
                 {{/if}}
 
                 {{#if step}}
-                    <p> Step: {{step.name}}</p>
+                    <p> Step:</p>
+                    <a class="mdl-navigation__link" href="{{ pathFor 'step' projectId=step.projectId modelId=step.modelId _id=step._id }}">{{step.name}}</a>
                 {{/if}}
             </div>
         </div>
     </div>
+
 </template>

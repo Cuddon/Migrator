@@ -9,7 +9,8 @@ Meteor.methods({
         if (!Meteor.userId()) {
             // User not logged in
             // Raise an error and send it to the client
-            throw new Meteor.Error("logged-out", "You must be logged in to add a new project.");
+            Router.go('home');
+            throw new Meteor.Error("logged-out", "You must be logged in.");
         }
 
         // Check if the user has permission to add projects

@@ -3,6 +3,7 @@
  */
 
 Template.header.events({
+
     "click .home-button": function () {
         Router.go("home");
 
@@ -28,13 +29,6 @@ Template.header.events({
         return false;
     },
 
-    "click .projects-button": function () {
-        Router.go("projects");
-
-        // Prevent default form action
-        return false;
-    },
-
     "click .profile-button": function () {
         Router.go("profile");
 
@@ -45,25 +39,3 @@ Template.header.events({
 
 });
 
-Template.header.events({
-    "click a[data-route]": function (event, template) {
-        event.preventDefault();
-
-        var tab = $(event.currentTarget).data('route');
-
-        var projectId = Session.get('project');
-        var modelId = Session.get('model');
-        var stepId = Session.get('step');
-
-        if (tab === 'projects') {
-            Router.go('projects');
-        } else if (tab === 'project' && projectId) {
-            Router.go('project', {_id: projectId});
-        } else if (tab === 'model' && projectId && modelId) {
-            Router.go('model', {projectId: projectId, _id: modelId});
-        } else if (tab === 'step' && projectId && modelId && stepId) {
-            Router.go('step', {projectId: projectId, modelId: modelId, _id: stepId});
-        }
-    }
-
-});
